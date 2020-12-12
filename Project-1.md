@@ -14,6 +14,7 @@ Note: Sketched out
 
 API’s to be used:
 https://developer.marvel.com/
+
 https://www.omdbapi.com/
 
 
