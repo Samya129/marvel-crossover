@@ -1,3 +1,10 @@
-.jumbotron jumbotron-fluid{
-    background-image: url(Images/Universe.png);
+.jumbotron jumbotron-fluid {
+  background-image: url(Images/Universe.png);
+}
+
+button,
+div,
+form,
+input {
+  margin: 10px;
 }
