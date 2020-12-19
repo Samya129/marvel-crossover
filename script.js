@@ -17,7 +17,7 @@ $('#search-button').on('click', function () {
 //dark and light toggle
 //opacity changes as you view a character
 var movie = $("#movie-input").val();
-//var queryURL = "https://developer.marvel.com/" + movie + "&apikey=trilogy"; Needs to be verified and updated.
+var queryURL = "https://developer.marvel.com/" + movie + "&apikey=trilogy"; Needs to be verified and updated.
 var apiKey = "5e14a1a12a5c9e438899f4c6ed236a58"
 $("#search-button").on("click", function(event) {
 
