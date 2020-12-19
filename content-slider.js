@@ -9,7 +9,7 @@ $(document).ready(function(){
     auto:true    
     })
 
-    $('#slider').slider({
+    slider({
     item: 3,
     slideMove: 1,
     slideMargin: 10,
