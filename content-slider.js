@@ -1,24 +1,22 @@
 //Call the plugin
+$( document ).ready(function(){
+    var slider = new Foundation.Orbit(orbit, options);
 
-$(document).ready(function() {
-    $('#lightSlider').lightSlider({
+    slider({
     gallery:true,
     minSlide:1,
     maxSlide:1,
     auto:true    
     })
-});
-    
-//Slider Settings
-$(document).ready(function() {
-    $('#lightSlider').lightSlider({
+
+    $('#slider').slider({
     item: 3,
     slideMove: 1,
     slideMargin: 10,
     addClass:'',
      
     mode:"slide",// Type of transition 'slide' and 'fade'.
-    useCSS:true,// If true LightSlider will use CSS transitions. if falls jquery animation will be used.
+    useCSS:true,// If true slider will use CSS transitions. if falls jquery animation will be used.
     speed: 1000,// Transition duration (in ms).
     cssEasing:'ease',// 'cubic-bezier(0.25, 0, 0.25, 1)'
     easing:'linear',// The type of "easing". ex: 'linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'cubic-bezier(n,n,n,n)'.
@@ -55,12 +53,8 @@ $(document).ready(function() {
     onBeforeNextSlide:function($el,scene) {},
     onBeforePrevSlide:function($el,scene) {}
     }); 
-});
 
-
-//Public Methods
-    $(document).ready(function() {
-      var slider = $("#light-slider").lightSlider();
+      var slider = $("#light-slider").slider();
       slider.goToSlide(3);
       slider.goToPrevSlide();
       slider.goToNextSlide();
@@ -69,4 +63,4 @@ $(document).ready(function() {
       slider.play();
       slider.pause();
       slider.destroy();
-    });
+});
