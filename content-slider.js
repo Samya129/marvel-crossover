@@ -1,5 +1,5 @@
 //Call the plugin
-$( document ).ready(function(){
+$(document).ready(function(){
     var slider = new Foundation.Orbit(orbit, options);
 
     slider({
