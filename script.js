@@ -9,12 +9,17 @@ var apiKey = "5e14a1a12a5c9e438899f4c6ed236a58";
 queryURL = "https://gateway.marvel.com/"
 more = "/v1/public/comics"
 test = "https://gateway.marvel.com/v1/public/comics&e14a1a12a5c9e438899f4c6ed236a58"
+characters = "http://gateway.marvel.com/v1/public/comics/291/characters"
+
+var marvelHeroesInMovies = ['spiderman', 'black widow'];
+
 
 // timestamp = 1
-// private key = abcd
-// public key = 1234
-// http://gateway.marvel.com/v1/public/comics?ts=1&apikey=1234&hash=ffd275c5130566a2916217b101f26150
+// private key = 051db34c2590f092a8f3537025fb73796a30cecf
+// public key = 1f75ef821356b695e0ddea475096c267
+// ALL MARVEL OBJECTShttp://gateway.marvel.com/v1/public/comics?ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a
 // The Hash generation formula given to us from the Marvel API is: (timestamp)(private key)(public key).
+// hash = 3700da1df635c0697acbbcfcd70c655a
 $("#search-button").on("click", function() {
     alert("Works?");
   });
@@ -34,6 +39,15 @@ $("#search-button").on("click", function() {
 
 
 
+// basic functionality 
+  // select a character --> press button --> spiderman
+    // from buttons or toggle drop down etc.
+    // put 'spiderman' into search of marvel comics api
+      // 
+    // search query for 
+  // search for all appearances of spiderman in comics
+  // search comic titles / compare comic titles against marvel movies
+  // return movies spiderman is in
 
 
 
