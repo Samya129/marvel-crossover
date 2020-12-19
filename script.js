@@ -5,7 +5,7 @@
 //   alert("Works?");
 // });
 
-var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
+var movies = [];
 
 // displayMovieInfo function re-renders the HTML to display the appropriate content
 function displayMovieInfo() {
