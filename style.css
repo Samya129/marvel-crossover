@@ -1,3 +1,4 @@
-.jumbotron jumbotron-fluid{
-    background-image: url(Images/Universe.png);
-}
+$button-palette: (
+    $light-gray: #e6e6e6
+$white: #fefefe
+);
