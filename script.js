@@ -9,15 +9,22 @@ var apiKey = "5e14a1a12a5c9e438899f4c6ed236a58";
 queryURL = "https://gateway.marvel.com/"
 more = "/v1/public/comics"
 test = "https://gateway.marvel.com/v1/public/comics&e14a1a12a5c9e438899f4c6ed236a58"
-characters = "http://gateway.marvel.com/v1/public/comics/291/characters"
+characters = "http://gateway.marvel.com/v1/public/comics/291/characters?"
 
 var marvelHeroesInMovies = ['spiderman', 'black widow'];
+var avengersMoviesArr = ['Captain America: The First Avenger', 'Captain Marvel', 'Iron Man', 'Iron Man 2', 'The Incredible Hulk',
+'Thor', 'The Avengers', 'Iron Man 3', 'Thor: The Dark World', 'Captain America: The Winter Soldier', 'Guardians of the Galaxy',
+'Guardians of the Galaxy Vol 2', 'Avengers: Age of Ultron', 'Ant-Man', 'Captain America: Civil War', 'Doctor Strange',
+'Black Panther', 'Spider-Man: Homecoming', 'Thor: Ragnarok', 'Ant-Man and the Wasp', 'Avengers: Infinity War', 'Avengers: Endgame',
+'Spider-Man: Far From Home']
 
+var endOfQueryStuff = "ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
+var testsearch2 = "http://gateway.marvel.com/v1/public/comics/291/characters?ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
 
 // timestamp = 1
 // private key = 051db34c2590f092a8f3537025fb73796a30cecf
 // public key = 1f75ef821356b695e0ddea475096c267
-// ALL MARVEL OBJECTShttp://gateway.marvel.com/v1/public/comics?ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a
+// ALL MARVEL OBJECTS http://gateway.marvel.com/v1/public/comics?ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a
 // The Hash generation formula given to us from the Marvel API is: (timestamp)(private key)(public key).
 // hash = 3700da1df635c0697acbbcfcd70c655a
 $("#search-button").on("click", function() {
@@ -31,24 +38,26 @@ $("#search-button").on("click", function() {
   queryURLsuperhero = "https://superheroapi.com/api/access-token";
 
 
-// what APIs do we need and why?
-  // omdb
-    // movie information --> actors, year released, plot summary
-  // superheroapi --> character attributes, biography, appearance, IMAGE
-  // marvel --> to connect superheroes with the movies they are in
-
-
 
 // basic functionality 
   // select a character --> press button --> spiderman
     // from buttons or toggle drop down etc.
     // put 'spiderman' into search of marvel comics api
-      // 
-    // search query for 
+      // grab comics that spiderman appears in
+      // grab their titles
+    // search query for movies that include spiderman
   // search for all appearances of spiderman in comics
   // search comic titles / compare comic titles against marvel movies
   // return movies spiderman is in
+    // movies must have list of all superheros 
 
+
+
+// what APIs do we need and why?
+  // omdb
+    // movie information --> actors, year released, plot summary
+  // superheroapi --> character attributes, biography, appearance, IMAGE
+  // marvel --> to connect superheroes with the movies they are in
 
 
 
