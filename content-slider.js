@@ -7,7 +7,7 @@ $(document).ready(function() {
     maxSlide:1,
     auto:true    
     })
-};
+});
     
 //Slider Settings
 $(document).ready(function() {
@@ -55,7 +55,7 @@ $(document).ready(function() {
     onBeforeNextSlide:function($el,scene) {},
     onBeforePrevSlide:function($el,scene) {}
     }); 
-}
+});
 
 
 //Public Methods
@@ -69,4 +69,4 @@ $(document).ready(function() {
       slider.play();
       slider.pause();
       slider.destroy();
-    }
+    });
