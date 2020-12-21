@@ -1,17 +1,16 @@
+// S T A R T
 
-//Front-end
-//Implement boostrap into our design
-//search bar
-//search button
-
-// marvel api
+// marvel api + hash for the queryURL + other URL info
 var apiKeyPublic = "1f75ef821356b695e0ddea475096c267";
-queryURL = "https://gateway.marvel.com/"
-more = "/v1/public/comics"
-test = "https://gateway.marvel.com/v1/public/comics&e14a1a12a5c9e438899f4c6ed236a58"
-characters = "http://gateway.marvel.com/v1/public/comics/291/characters?"
-hash = "3700da1df635c0697acbbcfcd70c655a"
+var hash = "3700da1df635c0697acbbcfcd70c655a"
+var endOfQueryStuff = "ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
+var HulkSearch = "https://gateway.marvel.com:443/v1/public/characters?ts=1&name=Hulk&limit=99&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
+// var testsearch2 = "http://gateway.marvel.com/v1/public/comics/291/characters?ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
+// var test3 = "http://gateway.marvel.com/v1/public/characters/1010802?ts=1&limit=99&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
+// ALL MARVEL OBJECTS http://gateway.marvel.com/v1/public/comics?ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a
+// The Hash generation formula given to us from the Marvel API is: (timestamp)(private key)(public key).
 
+// example arrays to work with
 var marvelHeroesInMovies = ['spiderman', 'black widow'];
 var avengersMoviesArr = ['Captain America: The First Avenger', 'Captain Marvel', 'Iron Man', 'Iron Man 2', 'The Incredible Hulk',
 'Thor', 'The Avengers', 'Iron Man 3', 'Thor: The Dark World', 'Captain America: The Winter Soldier', 'Guardians of the Galaxy',
@@ -19,16 +18,8 @@ var avengersMoviesArr = ['Captain America: The First Avenger', 'Captain Marvel',
 'Black Panther', 'Spider-Man: Homecoming', 'Thor: Ragnarok', 'Ant-Man and the Wasp', 'Avengers: Infinity War', 'Avengers: Endgame',
 'Spider-Man: Far From Home']
 
-var endOfQueryStuff = "ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
-var testsearch2 = "http://gateway.marvel.com/v1/public/comics/291/characters?ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
-var test3 = "http://gateway.marvel.com/v1/public/characters/1010802?ts=1&limit=99&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
-var HulkSearch = "https://gateway.marvel.com:443/v1/public/characters?ts=1&name=Hulk&limit=99&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
-// timestamp = 1
-// private key = 051db34c2590f092a8f3537025fb73796a30cecf
-// public key = 1f75ef821356b695e0ddea475096c267
-// ALL MARVEL OBJECTS http://gateway.marvel.com/v1/public/comics?ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a
-// The Hash generation formula given to us from the Marvel API is: (timestamp)(private key)(public key).
-// hash = 3700da1df635c0697acbbcfcd70c655a
+
+// F U N C T I O N S 
 
 var heroName = "Iron Man";
 
