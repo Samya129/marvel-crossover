@@ -1,18 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-* {
-    font-family: 'Bangers', cursive
+*  {
+    font-family: 'Bangers', cursive;
+    color: white;
  }
  
-.card-divider a:hover{
+.menu {
+    background-color: black;
+}
+
+.card-section, li, p{
+    background-color: black; 
+}
+
+form {
+    width: 340px;
+    height: 39px;
+}
+
+a:hover, li:hover {
+    background-color: #f0131e;
+}
+
+#searchButton .searchBar a .is-dropdown-submenu-parent .menu{
+    height: 39px;
+}
+
+#searchButton:hover{
+    background-color: #f0131e;
+}
+
+.grid-x.grid-margin-x.small-up-2.medium-up-3{
+padding-top: 15px;
+background-color: black;
+border: 30px solid white;
+}
+
+p {
+color: white;
+}
+
+h4 {
+text-align: center;
+}
+
+h4:hover, .pCards:hover{
     background: #f0131e;
 }
-.characterInfo {
-    background: black;
-    color: #ffffff;
+
+.input-group-field{
+    color: red;
 }
-.menu{
-    background-color: black;
-}
-li{
-    background-color: black;
+.test:hover{
+   background: #875094;
 }

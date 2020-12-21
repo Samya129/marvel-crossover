@@ -13,102 +13,6 @@
 </head>
 ​
 <body>
-    <img src="Images/Universe.png" alt="Marvel Universe Image">
-<!-- Dropdown Option 1 -->
-<ul class="dropdown menu" data-dropdown-menu>
-  <li>
-    <a>Characters</a>
-    <ul class="menu">
-      <li>
-        <a href='#0'> Black-Widow</a>
-        <ul class="menu">
-          <li><a href='#0'>Movie 1</a></li>
-          <li><a href='#0'>Movie 2</a></li>
-          <li><a href='#0'>Movie 3</a></li>
-          <li><a href='#0'>Movie 4</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href='#0'>Captain-America</a>
-        <ul class="menu">
-          <li><a href='#0'>Movie 1</a></li>
-          <li><a href='#0'>Movie 2</a></li>
-          <li><a href='#0'>Movie 3</a></li>
-          <li><a href='#0'>Movie 4</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-</ul>
-<!-- Dropdown Option 2 -->
-<ul class="dropdown menu" data-dropdown-menu>
-  <li>
-    <a href="#">Characters</a>
-    <ul class="menu">
-      <li><a href="#">Black-Widow</a></li>
-      <li><a href="#">Captain-America</a></li>
-      <li><a href="#">Hulk</a></li>
-      <li><a href="#">Iron-Man</a></li>
-      <!-- ... -->
-    </ul>
-  </li>
-
-  <li>
-    <a href="#">Movies</a>
-    <ul class="menu">
-      <li><a href="#">Spider-Man: Far From Home</a></li>
-      <li><a href="#">Captain-America: Civil War</a></li>
-      <li><a href="#">The Incredible Hulk</a></li>
-      <li><a href="#">Iron-Man 2</a></li>
-      <!-- ... -->
-    </ul>
-  </li>
-
-  <li>
-    <a href="#">Comics</a>
-    <ul class="menu">
-      <li><a href="#">Deadpool</a></li>
-      <li><a href="#">Wolverine</a></li>
-      <li><a href="#">Loki</a></li>
-      <li><a href="#">Black Panther</a></li>
-      <!-- ... -->
-    </ul>
-  </li>
-</ul>
-<!--Search Bar-->
-<form action="">
-  <div class="input-group">
-    <input class="input-group-field" type="text">
-    <div class="input-group-button">
-      <input type="submit" class="button" id=searchButton value="Search">
-    </div>
-  </div>
-</form> 
-
-
-
-
-<div class="cell small-6">
-
-<div class="column">
-<div class="card" style="width: 250px; height: 300px;">
-  <div class="card-divider">
-    <h4 id="characterName">Character's Name</h4>
-  </div>
-  <img src="https://via.placeholder.com/600x300.png?text=Visit+WhoIsHostingThis.com+Buyers+Guide">
-  <div class="card-section">
-    <p class="characterInfo" >Character's information about themselves linked through api.</p>
-  </div>
-</div>
-</div>
-</div>
-<!-- section for colors -->
-
-
-
-
 <!-- section for carousel -->
 <section>
   <main class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
@@ -161,6 +65,126 @@
 
 </section> 
 
+    <!-- <img src="Images/Universe.png" alt="Marvel Universe Image"> -->
+
+<!-- Dropdown Menu -->
+<ul class="dropdown menu" data-dropdown-menu>
+  <li>
+    <a href="#">Characters</a>
+    <ul class="menu">
+      <li><button href="#">Black-Widow</button></li>
+      <li><button href="#">Captain-America</button></li>
+      <li><button href="#">Hulk</button></li>
+      <li><button href="#">Iron-Man</button></li>
+      <!-- Extra Characters -->
+    </ul>
+  </li>
+
+  <li>
+    <a href="#">Movies</a>
+    <ul class="menu">
+      <li><button href="#">Spider-Man: Far From Home</button></li>
+      <li><button href="#">Captain-America: Civil War</button></li>
+      <li><button href="#">The Incredible Hulk</button></li>
+      <li><button href="#">Iron-Man 2</button></li>
+      <!--Add extra movies below -->
+    </ul>
+  </li>
+
+  <li>
+    <a href="#">Comics</a>
+    <ul class="menu">
+      <li><button href="#">Deadpool</button></li>
+      <li><button href="#">Wolverine</button></li>
+      <li><button href="#">Loki</button></li>
+      <li><button href="#">Black Panther</button></li>
+      <!--Add extra comics  -->
+    </ul>
+  </li>
+    <!--Search Bar-->
+  <form class="searchBar" autocomplete="on">
+  <div class="input-group">
+    <input class="input-group-field" type="text" autocomplete="off">
+    <div class="input-group-button">
+      <button type="submit" class="button float-right" id=searchButton value="Search">Search</button>
+    </div>
+  </div>
+</form> 
+</ul>
+<!--Cards Section-->
+
+<div class="grid-container">
+  <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+    <div class="cell">
+      <div class="card">
+        <div class="card-section">
+        <h4 style="font-family: 'Bangers', cursive;">Iron-Man/Character about them</h4>
+        <img class="cardImage" src="https://via.placeholder.com/550x550">
+          <p class="pCards">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="cell">
+        <div class="card">
+          <div class="card-section">
+            <h4 style="font-family: 'Bangers', cursive; color: yellow;">Iron-Man/Movies they were in</h4>
+          <img class="cardImage" src="https://via.placeholder.com/550x550">
+            <p class="pCards">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          </div>
+        </div>
+
+        <div class="cell">
+          <div class="card">
+            <div class="card-section">
+              <h4 style="font-family: 'Bangers', cursive; color: #1779ba;">Iron-Man/Comic book series</h4>
+            <img class="cardImage" src="https://via.placeholder.com/550x550">
+              <p class="pCards">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="cell">
+            <div class="card">
+              <div class="card-section">
+                <h4 class="test" style="font-family: 'Bangers', cursive; color: #008000; ">Iron-Man/Movies they were in</h4>
+              <img class="cardImage" src="https://via.placeholder.com/550x550">
+                <p class="pCards test">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+              </div>
+            </div>
+
+
+  </div>
+</div>
+
+<div class="container">
+<div class="row">
+  <div class="columns small-6" style="float: right; width: 650px;" id="example1" data-something>
+    <div class="container Moving">
+    <p id="doodle">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+</div>
+<div class="columns small-6 right" data-sticky-container>
+  <div class="sticky" data-sticky data-margin-top="6" data-anchor="example1">
+    <img class="thumbnail" src="rectangle-3.jpg" style="width: 450px; height: 380px;" alt="Placeholder">
+  </div>
+</div>
+</div>
+</div>
 
   <script src ="content-slider.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
@@ -171,5 +195,4 @@
   <script>$(document).foundation();</script>
 ​<script src="script.js"></script>
 </body>
-​
 </html>
