@@ -1,4 +1,18 @@
-$button-palette: (
-    $light-gray: #e6e6e6
-$white: #fefefe
-);
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+* {
+    font-family: 'Bangers', cursive
+ }
+ 
+.card-divider a:hover{
+    background: #f0131e;
+}
+.characterInfo {
+    background: black;
+    color: #ffffff;
+}
+.menu{
+    background-color: black;
+}
+li{
+    background-color: black;
+}
