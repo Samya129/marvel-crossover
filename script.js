@@ -29,29 +29,58 @@ var HulkSearch = "https://gateway.marvel.com:443/v1/public/characters?ts=1&name=
 // ALL MARVEL OBJECTS http://gateway.marvel.com/v1/public/comics?ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a
 // The Hash generation formula given to us from the Marvel API is: (timestamp)(private key)(public key).
 // hash = 3700da1df635c0697acbbcfcd70c655a
+
+var heroName = "Iron Man";
+
 $("#search-button").on("click", function(event) {
     // alert("Works?");
     event.preventDefault();
-    // var queryURL = "https://www.omdbapi.com/?t=" 
+    var queryURL = "https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=99+&name=" + heroName + "&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a";
     $.ajax({
-      url: HulkSearch,
+      url: queryURL,
       method: "GET"
     }).then(function(response) {
-      console.log(response + " pre strung");
-      console.log(JSON.stringify(response + " post strung"));
       // gets hulk character object 
       var charObj = response.data.results[0];
+      console.log(charObj + " obj");
         // number of comic appearances
       var charComics = charObj.comics.available;
+      console.log(charComics + " comics");
         // number of serioes appearances
       var charSeries = charObj.series.available;
+      console.log(charSeries+" series");
         // description
       var charDescrip = charObj.description;
+      console.log(charDescrip+" descrip");
         // URLs
       var charURLS = charObj.urls;
+      console.log(charURLs+" URLs");
       console.log("end response");
     
   });
+
+  function renderCard() {
+
+    // need a place in the HTML to start attaching the cards
+    $("#buttons-view").empty();
+
+    // Looping through the array of movies
+    for (var i = 0; i < movies.length; i++) {
+
+      // Then dynamicaly generating buttons for each movie in the array.
+      // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
+      var a = $("<button>");
+      // Adding a class
+      a.addClass("movie");
+      // Adding a data-attribute with a value of the movie at index i
+      a.attr("data-name", movies[i]);
+      // Providing the button's text with a value of the movie at index i
+      a.text(movies[i]);
+      // Adding the button to the HTML
+      $("#buttons-view").append(a);
+    }
+  }
+
 
 // api resources
   // marvel --> characters
