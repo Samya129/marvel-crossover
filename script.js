@@ -37,21 +37,19 @@ $("#search-button").on("click", function() {
   // superheroapi --> https://superheroapi.com/
   queryURLsuperhero = "https://superheroapi.com/api/access-token";
 
+// character input --> comic titles appear --> grab titles--> search titles in  movie API --> display movie results
 
-
-// basic functionality 
+// basic functionality --> search comic titles / then compare comic titles with marvel movies
   // select a character --> press button --> spiderman
     // from buttons or toggle drop down etc.
     // put 'spiderman' into search of marvel comics api
-      // grab comics that spiderman appears in
+      // search for all appearances of spiderman in comics
+    // grab comics that spiderman appears in
       // grab their titles
     // search query for movies that include spiderman
-  // search for all appearances of spiderman in comics
-  // search comic titles / compare comic titles against marvel movies
-  // return movies spiderman is in
-    // movies must have list of all superheros 
-
-
+      // return movies spiderman is in
+        // movies must have list of all superheros 
+  
 
 // what APIs do we need and why?
   // omdb
