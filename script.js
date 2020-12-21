@@ -22,7 +22,7 @@ var avengersMoviesArr = ['Captain America: The First Avenger', 'Captain Marvel',
 var endOfQueryStuff = "ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
 var testsearch2 = "http://gateway.marvel.com/v1/public/comics/291/characters?ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
 var test3 = "http://gateway.marvel.com/v1/public/characters/1010802?ts=1&limit=99&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
-var HulkSearch = "https://gateway.marvel.com:443/v1/public/characters?ts=1name=Hulk&limit=99&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
+var HulkSearch = "https://gateway.marvel.com:443/v1/public/characters?ts=1&name=Hulk&limit=99&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a"
 // timestamp = 1
 // private key = 051db34c2590f092a8f3537025fb73796a30cecf
 // public key = 1f75ef821356b695e0ddea475096c267
