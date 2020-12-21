@@ -16,10 +16,13 @@ form {
     width: 340px;
     height: 39px;
 }
-
+a{
+    color:white;
+}
 a:hover, li:hover {
     background-color: #f0131e;
 }
+
 
 #searchButton .searchBar a .is-dropdown-submenu-parent .menu{
     height: 39px;
@@ -28,6 +31,11 @@ a:hover, li:hover {
 #searchButton:hover{
     background-color: #f0131e;
 }
+h4 {
+    font-family: 'Bangers', cursive;
+    color: yellow;
+    text-align: center;
+    }
 
 .grid-x.grid-margin-x.small-up-2.medium-up-3{
 padding-top: 15px;
@@ -36,20 +44,16 @@ border: 30px solid white;
 }
 
 p {
-color: white;
-}
-
-h4 {
-text-align: center;
+color: yellow;
 }
 
 h4:hover, .pCards:hover{
     background: #f0131e;
 }
 
-.input-group-field{
+/* .input-group-field{
     color: red;
-}
-.test:hover{
+} */
+/* .test:hover{
    background: #875094;
-}
+} */
