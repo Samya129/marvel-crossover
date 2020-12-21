@@ -21,11 +21,12 @@ var avengersMoviesArr = ['Captain America: The First Avenger', 'Captain Marvel',
 
 // F U N C T I O N S 
 
-var heroName = "Iron Man";
+// var heroName = "Iron Man";
 
-$("#search-button").on("click", function(event) {
+$("#searchButton").on("click", function(event) {
     // alert("Works?");
     event.preventDefault();
+    var heroName = $("#searchBarField").val().trim()
     var queryURL = "https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=99+&name=" + heroName + "&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a";
     $.ajax({
       url: queryURL,
