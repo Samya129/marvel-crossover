@@ -29,10 +29,29 @@ var HulkSearch = "https://gateway.marvel.com:443/v1/public/characters?ts=1&name=
 // ALL MARVEL OBJECTS http://gateway.marvel.com/v1/public/comics?ts=1&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a
 // The Hash generation formula given to us from the Marvel API is: (timestamp)(private key)(public key).
 // hash = 3700da1df635c0697acbbcfcd70c655a
-$("#search-button").on("click", function() {
-    alert("Works?");
+$("#search-button").on("click", function(event) {
+    // alert("Works?");
+    event.preventDefault();
+    // var queryURL = "https://www.omdbapi.com/?t=" 
+    $.ajax({
+      url: HulkSearch,
+      method: "GET"
+    }).then(function(response) {
+      console.log(response + " pre strung");
+      console.log(JSON.stringify(response + " post strung"));
+      // gets hulk character object 
+      var charObj = response.data.results[0];
+        // number of comic appearances
+      var charComics = charObj.comics.available;
+        // number of serioes appearances
+      var charSeries = charObj.series.available;
+        // description
+      var charDescrip = charObj.description;
+        // URLs
+      var charURLS = charObj.urls;
+      console.log("end response");
+    
   });
-
 
 // api resources
   // marvel --> characters
@@ -156,9 +175,9 @@ renderButtons();
 
 
 
-$('#search-button').on('click', function () {
-  alert('Works?')
-})
+// $('#search-button').on('click', function () {
+//   alert('Works?')
+// })
 
 //Back-End
 //Movie api and Marvel api link to our application
@@ -169,22 +188,20 @@ $('#search-button').on('click', function () {
 //module of each character so we avoid different pages with a hover feature
 //dark and light toggle
 //opacity changes as you view a character
-var movie = $("#movie-input").val();
-var queryURL = "https://developer.marvel.com/" + movie + "&apikey=trilogy"; Needs to be verified and updated.
-var apiKey = "5e14a1a12a5c9e438899f4c6ed236a58"
-$("#search-button").on("click", function(event) {
+// var movie = $("#movie-input").val();
+// var queryURL = "https://developer.marvel.com/" + movie + "&apikey=trilogy"; // Needs to be verified and updated.
+// var apiKey = "5e14a1a12a5c9e438899f4c6ed236a58"
+// $("#search-button").on("click", function(event) {
 
-    event.preventDefault();
+//     event.preventDefault();
 
     
 
-    var queryURL = "https://www.omdbapi.com/?t=" 
+//     var queryURL = "https://www.omdbapi.com/?t=" 
 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      $("#movie-view").text(JSON.stringify(response));
-    });
-
-  });
+//     $.ajax({
+//       url: queryURL,
+//       method: "GET"
+//     }).then(function(response) {
+//       $("#movie-view").text(JSON.stringify(response));
+    }); 
