@@ -47,8 +47,15 @@ $("#search-button").on("click", function () {
     },
   }).then(function (response) {
     var character = JSON.parse(response);
+    var charInfo = $("#characterInfo").text(character.biography);
+
     console.log(character);
     $("#characterName").text(character.name);
-    $("#bioPic").attr("src", character.images.md);
+    $("#bioPic").attr("src", character.images.lg);
+    //$("#characterInfo").text(character.biography);
+    var p = $("<p>").charInfo;
+    charInfo.append(p);
+
+    //var charBio =
   });
 });
