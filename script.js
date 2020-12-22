@@ -1,4 +1,5 @@
 // S T A R T
+console.log("START");
 
 // marvel api + hash for the queryURL + other URL info
 var apiKeyPublic = "1f75ef821356b695e0ddea475096c267";
@@ -19,8 +20,11 @@ var avengersMoviesArr = ['Captain America: The First Avenger', 'Captain Marvel',
 'Spider-Man: Far From Home']
 
 
+
+
 // F U N C T I O N S 
 
+var monkeyPic = "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1"
 // var heroName = "Iron Man";
 
 $("#searchButton").on("click", function(event) {
@@ -45,16 +49,64 @@ $("#searchButton").on("click", function(event) {
       var charDescrip = charObj.description;
       console.log(charDescrip+" descrip");
         // URLs
-      var charURLS = charObj.urls;
-      console.log(charURLs+" URLs");
+      // var charURLS = charObj.urls;
+      // console.log(charURLs+" URLs");
       console.log("end response");
+
+        // get place to attach new cards
+        var grid = $("#cardAttach");
+        // add cell
+        var cell = $("<div>").addClass("cell");
+        grid.append(cell);
+        // add card
+        var card = $("<div>").addClass("card");
+        cell.append(card);
+        // add card section
+        var cardSection = $("<div>").addClass("card-section");
+        card.append(cardSection);
+        // add header info
+        var cardHeader = $("<h4>").text(heroName);
+        card.append(cardHeader);
+        // add hero image
+        var cardImg = $("<img>").addClass("cardImage").attr("src", monkeyPic);
+        card.append(cardImg);
+        // add paragraphs for information
+
+
+    console.log("renderCard called");
+      renderCard(response);
     
   });
 
-  function renderCard() {
+  function renderCard(data) {    // NEED to do some work here
 
-    // need a place in the HTML to start attaching the cards
-    $("#buttons-view").empty();
+    // need a place in the HTML to start attaching the cards --> do that here?
+    // var gridContainer = $("#grid-container").empty();
+    // attach grid specifications
+    // var gridSpecs = $(".grid-x grid-margin-x small-up-2 medium-up-3");
+
+    // get place to attach new cards
+    var grid = "#cardAttach";
+    // add cell
+    var cell = $("<div>").addClass("cell");
+    grid.append(cell);
+    // add card
+    var card = $("<div>").addClass("card");
+    cell.append(card);
+    // add card section
+    var cardSection = $("<div>").addClass("card-section");
+    cell.append(cardSection);
+    // add header info
+    var cardHeader = $("<h4>").text("HEADER IS DIF");
+    cell.append(cardHeader);
+
+    console.log("renderCard called");
+
+    // add img class cardImage and src
+      // add text
+
+console.log("pre render");
+renderCard();
 
     // Looping through the array of movies
     for (var i = 0; i < movies.length; i++) {
