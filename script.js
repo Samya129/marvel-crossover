@@ -58,19 +58,25 @@ $("#searchButton").on("click", function(event) {
         // add cell
         var cell = $("<div>").addClass("cell");
         grid.append(cell);
-        // add card
+        // add card to cell
         var card = $("<div>").addClass("card");
         cell.append(card);
-        // add card section
+        // add card section to card
         var cardSection = $("<div>").addClass("card-section");
         card.append(cardSection);
-        // add header info
+        // add header info to card
         var cardHeader = $("<h4>").text(heroName);
         card.append(cardHeader);
-        // add hero image
+        // add monkey image to card 
         var cardImg = $("<img>").addClass("cardImage").attr("src", monkeyPic);
         card.append(cardImg);
         // add paragraphs for information
+        var seriesNum = $("<p>").text("Number of Series Appearances: " + charSeries);
+        card.append(seriesNum);
+        var comicsNum = $("<p>").text("Number of Comic Appearances: " + charComics);
+        card.append(comicsNum);
+        var heroDescription = $("<p>").text("Description: " + charDescrip);
+        card.append(heroDescription);
 
 
     console.log("renderCard called");
