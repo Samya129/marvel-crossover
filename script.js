@@ -27,62 +27,111 @@ var avengersMoviesArr = ['Captain America: The First Avenger', 'Captain Marvel',
 var monkeyPic = "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1"
 // var heroName = "Iron Man";
 
-$("#searchButton").on("click", function(event) {
-    // alert("Works?");
-    event.preventDefault();
-    var heroName = $("#searchBarField").val().trim()
-    var queryURL = "https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=99+&name=" + heroName + "&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a";
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      // gets hulk character object 
-      var charObj = response.data.results[0];
-      console.log(charObj + " obj");
-        // number of comic appearances
-      var charComics = charObj.comics.available;
-      console.log(charComics + " comics");
-        // number of serioes appearances
-      var charSeries = charObj.series.available;
-      console.log(charSeries+" series");
-        // description
-      var charDescrip = charObj.description;
-      console.log(charDescrip+" descrip");
-        // URLs
-      // var charURLS = charObj.urls;
-      // console.log(charURLs+" URLs");
-      console.log("end response");
+ // on press -->
+  // run search to API1
+    // populate card
+  // run search to API2
 
-        // get place to attach new cards
-        var grid = $("#cardAttach");
-        // add cell
-        var cell = $("<div>").addClass("cell");
-        grid.append(cell);
-        // add card to cell
-        var card = $("<div>").addClass("card");
-        cell.append(card);
-        // add card section to card
-        var cardSection = $("<div>").addClass("card-section");
-        card.append(cardSection);
-        // add header info to card
-        var cardHeader = $("<h4>").text(heroName);
-        card.append(cardHeader);
-        // add monkey image to card 
-        var cardImg = $("<img>").addClass("cardImage").attr("src", monkeyPic);
-        card.append(cardImg);
-        // add paragraphs for information
-        var seriesNum = $("<p>").text("Number of Series Appearances: " + charSeries);
-        card.append(seriesNum);
-        var comicsNum = $("<p>").text("Number of Comic Appearances: " + charComics);
-        card.append(comicsNum);
-        var heroDescription = $("<p>").text("Description: " + charDescrip);
-        card.append(heroDescription);
+  // run search to API3
+
+// $("#searchButton").on("click", function (event) {
+//   event.preventDefault();
+//   var charSearch = $("#searchBarField").val().trim();
+//   var queryURL = "https://superhero-search.p.rapidapi.com/?hero=" + charSearch;
+//   console.log(charSearch);
+//   $.ajax({
+//     url: queryURL,
+//     method: "GET",
+//     headers: {
+//       "x-rapidapi-key": "54c80468acmsh43ee2bf41fce3bcp10eeadjsnb0994b7b57f7",
+//       "x-rapidapi-host": "superhero-search.p.rapidapi.com",
+//     },
+//   }).then(function (response) {
+//     var character = JSON.parse(response);
+//     console.log(character);
+//     console.log(character.biography.fullName);
+//     //$("#characterName").text(character.name);
+//     //$("#bioPic").attr("src", character.images.lg);
+//     //$("#characterInfo").text(character.biography.fullName);
+//   });
+// });
+// stick one API call inside the other --> nest
+// call the card in the search button function but as large as it can get
+
+$("#searchButton").on("click", function(event) {
+  // alert("Works?");
+  event.preventDefault();
+  var heroName = $("#searchBarField").val().trim()
+  var queryURL = "https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=99+&name=" + heroName + "&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a";
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    // gets hulk character object 
+    var charObj = response.data.results[0];
+    console.log(charObj + " obj");
+      // number of comic appearances
+    var charComics = charObj.comics.available;
+    console.log(charComics + " comics");
+      // number of serioes appearances
+    var charSeries = charObj.series.available;
+    console.log(charSeries+" series");
+      // description
+    var charDescrip = charObj.description;
+    console.log(charDescrip+" descrip");
+      // URLs
+    // var charURLS = charObj.urls;
+    // console.log(charURLs+" URLs");
+    console.log("end response");
+
+      // get place to attach new cards
+      var grid = $("#cardAttach");
+      // add cell
+      var cell = $("<div>").addClass("cell");
+      grid.append(cell);
+      // add card to cell
+      var card = $("<div>").addClass("card");
+      cell.append(card);
+      // add card section to card
+      var cardSection = $("<div>").addClass("card-section");
+      card.append(cardSection);
+      // add header info to card
+      var cardHeader = $("<h4>").text(heroName);
+      card.append(cardHeader);
+      // add monkey image to card 
+      var cardImg = $("<img>").addClass("cardImage").attr("src", monkeyPic);
+      card.append(cardImg);
+      // add paragraphs for information
+      var seriesNum = $("<p>").text("Number of Series Appearances: " + charSeries);
+      card.append(seriesNum);
+      var comicsNum = $("<p>").text("Number of Comic Appearances: " + charComics);
+      card.append(comicsNum);
+      var heroDescription = $("<p>").text("Description: " + charDescrip);
+      card.append(heroDescription);
 
 
     console.log("renderCard called");
-      renderCard(response);
-    
+      // renderCard(response);
   });
+  var charSearch = $("#searchBarField").val().trim();
+  var queryURL = "https://superhero-search.p.rapidapi.com/?hero=" + charSearch;
+  console.log(charSearch);
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "54c80468acmsh43ee2bf41fce3bcp10eeadjsnb0994b7b57f7",
+      "x-rapidapi-host": "superhero-search.p.rapidapi.com",
+    },
+  }).then(function (response) {
+    var character = JSON.parse(response);
+    console.log(character);
+    console.log(character.biography.fullName);
+    //$("#characterName").text(character.name);
+    //$("#bioPic").attr("src", character.images.lg);
+    //$("#characterInfo").text(character.biography.fullName);
+  });
+});
 
   function renderCard(data) {    // NEED to do some work here
 
@@ -110,26 +159,26 @@ $("#searchButton").on("click", function(event) {
 
     // add img class cardImage and src
       // add text
-
-console.log("pre render");
-renderCard();
-
-    // Looping through the array of movies
-    for (var i = 0; i < movies.length; i++) {
-
-      // Then dynamicaly generating buttons for each movie in the array.
-      // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
-      var a = $("<button>");
-      // Adding a class
-      a.addClass("movie");
-      // Adding a data-attribute with a value of the movie at index i
-      a.attr("data-name", movies[i]);
-      // Providing the button's text with a value of the movie at index i
-      a.text(movies[i]);
-      // Adding the button to the HTML
-      $("#buttons-view").append(a);
-    }
   }
+console.log("pre render");
+// renderCard();
+
+//     // Looping through the array of movies
+//     for (var i = 0; i < movies.length; i++) {
+
+//       // Then dynamicaly generating buttons for each movie in the array.
+//       // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
+//       var a = $("<button>");
+//       // Adding a class
+//       a.addClass("movie");
+//       // Adding a data-attribute with a value of the movie at index i
+//       a.attr("data-name", movies[i]);
+//       // Providing the button's text with a value of the movie at index i
+//       a.text(movies[i]);
+//       // Adding the button to the HTML
+//       $("#buttons-view").append(a);
+//     }
+//   }
 
 
 // api resources
@@ -283,4 +332,4 @@ renderButtons();
 //       method: "GET"
 //     }).then(function(response) {
 //       $("#movie-view").text(JSON.stringify(response));
-    }); 
+    // }); 
