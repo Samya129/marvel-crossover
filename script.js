@@ -45,36 +45,7 @@ var avengersMoviesArr = [
 
 var monkeyPic =
   "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1";
-// var heroName = "Iron Man";
 
-// on press -->
-// run search to API1
-// populate card
-// run search to API2
-
-// run search to API3
-
-// $("#searchButton").on("click", function (event) {
-//   event.preventDefault();
-//   var charSearch = $("#searchBarField").val().trim();
-//   var queryURL = "https://superhero-search.p.rapidapi.com/?hero=" + charSearch;
-//   console.log(charSearch);
-//   $.ajax({
-//     url: queryURL,
-//     method: "GET",
-//     headers: {
-//       "x-rapidapi-key": "54c80468acmsh43ee2bf41fce3bcp10eeadjsnb0994b7b57f7",
-//       "x-rapidapi-host": "superhero-search.p.rapidapi.com",
-//     },
-//   }).then(function (response) {
-//     var character = JSON.parse(response);
-//     console.log(character);
-//     console.log(character.biography.fullName);
-//     //$("#characterName").text(character.name);
-//     //$("#bioPic").attr("src", character.images.lg);
-//     //$("#characterInfo").text(character.biography.fullName);
-//   });
-// });
 // stick one API call inside the other --> nest
 // call the card in the search button function but as large as it can get
 
@@ -96,8 +67,12 @@ $("#searchButton").on("click", function (event) {
   // add card section to card
   var cardSection = $("<div>").addClass("card-section");
   card.append(cardSection);
+  // add monkey image to card
+  var cardImg = $("<img>").addClass("cardImage") //.attr("src", monkeyPic);
+  card.append(cardImg);
 
-  // do first ajax call to MARVEL API
+
+  // do second ajax call to MARVEL API
   $.ajax({
     url: marvelQueryURL,
     method: "GET",
@@ -105,27 +80,19 @@ $("#searchButton").on("click", function (event) {
 
   // get marvel superhero object
   var charObj = response.data.results[0];
-  // console.log(charObj + " obj");
   // number of comic appearances
   var charComics = charObj.comics.available;
-  // console.log(charComics + " comics");
   // number of serioes appearances
   var charSeries = charObj.series.available;
-  // console.log(charSeries + " series");
   // description
   var charDescrip = charObj.description;
-  // console.log(charDescrip + " descrip");
   // URLs
   // var charURLS = charObj.urls;
-  // console.log(charURLs+" URLs");
 
   // add header info to card
   var cardHeader = $("<h4>").text(heroName);
   card.append(cardHeader);
-  // add monkey image to card
-  var cardImg = $("<img>").addClass("cardImage").attr("src", monkeyPic);
-  card.append(cardImg);
-
+  
   // add paragraphs for information from Marvel API
   var seriesNum = $("<p>").text(
     "Number of Series Appearances: " + charSeries);
@@ -141,7 +108,7 @@ $("#searchButton").on("click", function (event) {
   // search Superhero API for other information
   var charSearch = $("#searchBarField").val().trim();
   var superheroQueryURL = "https://superhero-search.p.rapidapi.com/?hero=" + charSearch;
-  console.log(charSearch);
+
   $.ajax({
     url: superheroQueryURL,
     method: "GET",
@@ -152,33 +119,43 @@ $("#searchButton").on("click", function (event) {
   }).then(function (response) {
     // hulk
     var character = JSON.parse(response);
-    console.log(character);
     // height .
     var height = character.appearance.height[0];
-    console.log(height);
     // weight 
     var weight = character.appearance.weight[0];
-    console.log(weight);
     // place of birth
-    var POB = character.biography.placeOfBirth;
-    console.log(POB);
+    var placeOfBirth = character.biography.placeOfBirth;
     // race 
     var race = character.appearance.race;
-    console.log(race);
     // occupation
     var occupation = character.work.occupation;
-    console.log(occupation);
     // aliases(?) 
     var aliases = character.biography.aliases;
-    console.log(aliases);
     // first appearance(?) 
     var firstAppearance = character.biography.firstAppearance;
-    console.log(firstAppearance);
     // image 
     var comicImg = character.images.lg
     console.log(comicImg);
 
     console.log("end second api call");
+
+    // create html elements and append them to the card
+    var heightP = $("<p>").text("Height: " + height);
+    card.append(heightP);
+    var weightP = $("<p>").text("Weight: " + weight);
+    card.append(weightP);
+    var placeOfBirthP = $("<p>").text("Place of Birth: " + placeOfBirth);
+    card.append(placeOfBirthP);
+    var raceP = $("<p>").text("Race: " + race);
+    card.append(raceP);
+    var occupationP = $("<p>").text("Occupation: " + occupation);
+    card.append(occupationP);
+    var firstAppearanceP = $("<p>").text("First Appearance: " + firstAppearance);
+    card.append(firstAppearanceP);
+    // change image to coimc image
+    $("#cardImg").attr("src", comicImg);
+
+
     
     console.log(character.biography.fullName);
     //$("#characterName").text(character.name);
