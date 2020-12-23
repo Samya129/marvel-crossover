@@ -47,15 +47,70 @@ $("#search-button").on("click", function () {
     },
   }).then(function (response) {
     var character = JSON.parse(response);
-    var charInfo = $("#characterInfo").text(character.biography);
-
     console.log(character);
+    console.log(character.biography.fullName);
     $("#characterName").text(character.name);
     $("#bioPic").attr("src", character.images.lg);
-    //$("#characterInfo").text(character.biography);
-    var p = $("<p>").charInfo;
-    charInfo.append(p);
+    $("#characterInfo").text(character.biography.fullName);
 
-    //var charBio =
+    //$("#characterInfo").text(character.biography);
+    // var p = $("<p>").charInfo;
+    // charInfo.append(p);
   });
 });
+
+$("#movieButton").on("click", function (movie) {
+  // Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything
+  var movie = $("#movieInput").val().trim();
+  var queryURL =
+    "https://movie-database-imdb-alternative.p.rapidapi.com/?s=" +
+    movie +
+    "&page=1&r=json";
+  console.log(queryURL);
+  console.log(movie);
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "54c80468acmsh43ee2bf41fce3bcp10eeadjsnb0994b7b57f7",
+      "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
+    },
+  }).then(function (response) {
+    // Printing the entire object to console
+    var movieMarvel = response;
+    console.log(movieMarvel);
+  });
+});
+
+// Constructing HTML containing the artist information
+// var artistName = $("<h1>").text(response.name);
+// var artistURL = $("<a>").attr("href", response.url).append(artistName);
+// var artistImage = $("<img>").attr("src", response.thumb_url);
+// var trackerCount = $("<h2>").text(
+//   response.tracker_count + " fans tracking this artist"
+// );
+// var upcomingEvents = $("<h2>").text(
+//   response.upcoming_event_count + " upcoming events"
+// );
+// var goToArtist = $("<a>")
+//   .attr("href", response.url)
+//   .text("See Tour Dates");
+
+// Empty the contents of the artist-div, append the new artist content
+//     $("#artist-div").empty();
+//     $("#artist-div").append(
+//       artistURL,
+//       artistImage,
+//       trackerCount,
+//       upcomingEvents,
+//       goToArtist
+//     );
+//   });
+// }
+
+//Event handler for user clicking the select-artist button
+
+// Preventing the button from trying to submit the form
+
+// Storing the artist name
+// Running the searchMoviePoster function(passing in the artist as an argument)

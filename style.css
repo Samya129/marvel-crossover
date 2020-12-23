@@ -8,3 +8,7 @@ form,
 input {
   margin: 10px;
 }
+
+#characterInfo {
+  border: red solid 4px;
+}
