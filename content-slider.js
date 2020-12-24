@@ -1,11 +1,6 @@
 //Call the plugin
-<<<<<<< Updated upstream
-=======
 //Colors defined here
 
-
-
->>>>>>> Stashed changes
 $(document).ready(function(){
     var slider = new Foundation.Orbit(orbit, options);
 
@@ -16,7 +11,7 @@ $(document).ready(function(){
     auto:true    
     })
 
-    $('#slider').slider({
+    slider({
     item: 3,
     slideMove: 1,
     slideMargin: 10,
