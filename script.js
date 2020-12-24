@@ -162,13 +162,24 @@ $("#searchButton").on("click", function (event) {
     //$("#characterInfo").text(character.biography.fullName);
   });
 
+<<<<<<< Updated upstream
+=======
+  // search movie API for movie information
+>>>>>>> Stashed changes
   var movie = $("#searchBarField").val().trim();
   var queryURL =
     "https://movie-database-imdb-alternative.p.rapidapi.com/?s=" +
     movie +
     "&page=1&r=json";
+<<<<<<< Updated upstream
   console.log(queryURL);
   console.log(movie);
+=======
+
+  console.log(queryURL);
+  console.log(movie);
+
+>>>>>>> Stashed changes
   $.ajax({
     url: queryURL,
     method: "GET",
