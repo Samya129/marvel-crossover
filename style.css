@@ -35,7 +35,7 @@ body{
     background-color: black;
 }
 
-.card-section, li, p{
+.card-section, li{
     background-color: black; 
 }
 
@@ -75,10 +75,10 @@ p {
 color: yellow;
 }
 
-h4:hover, .pCards:hover{
+.card-section:hover{
     background: #f0131e;
 }
 
-/* .input-group-field{
+.input-group-field{
     color: red;
-} */
+}
