@@ -3,6 +3,22 @@
     font-family: 'Bangers', cursive;
     color: white;
  }
+
+ .nav-container{
+    display: flex;
+    flex-direction: row;
+    border-top: solid black;
+    border-bottom: solid black;
+}
+.nav-right{
+    display: flex;
+    justify-content: flex-end;
+    width: 77%;
+    background-color: black;
+}
+.nav-left{
+    width: 23%;
+}
  
 .menu {
     background-color: black;
@@ -21,6 +37,7 @@ a{
 }
 a:hover, li:hover {
     background-color: #f0131e;
+    
 }
 
 
@@ -53,7 +70,4 @@ h4:hover, .pCards:hover{
 
 /* .input-group-field{
     color: red;
-} */
-/* .test:hover{
-   background: #875094;
 } */
