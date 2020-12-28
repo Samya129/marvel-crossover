@@ -19,6 +19,17 @@
 .nav-left{
     width: 23%;
 }
+body{
+    background-image: url("Images/Trial3.png");
+    /* background-size: cover;    */
+    /* this lead to working with one image but expands the page. */
+    background-repeat: no-repeat;
+    /* object-fit: cover; */
+    /* background-repeat: unset; */
+    background-repeat: round;
+    width: 100%;
+    
+}
  
 .menu {
     background-color: black;
