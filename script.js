@@ -1,6 +1,5 @@
 // S T A R T
 console.log("START");
-
 // marvel api + hash for the queryURL + other URL info
 var apiKeyPublic = "1f75ef821356b695e0ddea475096c267";
 var hash = "3700da1df635c0697acbbcfcd70c655a";
@@ -41,10 +40,12 @@ var avengersMoviesArr = [
   "Spider-Man: Far From Home",
 ];
 
-// F U N C T I O N S
-
 var monkeyPic =
   "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1";
+
+  
+  // F U N C T I O N S
+
 
 // stick one API call inside the other --> nest
 // call the card in the search button function but as large as it can get
@@ -52,6 +53,7 @@ var monkeyPic =
 $("#searchButton").on("click", function (event) {
   event.preventDefault();
   var heroName = $("#searchBarField").val().trim();
+  console.log(heroName + " hero name logged");
   var marvelQueryURL =
     "https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=99+&name=" +
     heroName +
