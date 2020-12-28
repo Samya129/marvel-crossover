@@ -183,6 +183,13 @@ $("#searchButton").on("click", function (event) {
     // Printing the entire object to console
     var movieMarvel = response;
     console.log(movieMarvel);
+    //how to search the title
+    console.log(movieMarvel.Search[0].Title);
+    console.log(movieMarvel.Search[2].Title);
+    console.log(movieMarvel.Search[1].Title);
+    console.log(movieMarvel.Search[0].Poster);
+    console.log(movieMarvel.Search[0].Year);
+    //maybe can divide movies by years for the phases? starting with 2008, create a for loop for that,
   });
 });
 
