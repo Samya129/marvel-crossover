@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  ​
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -22,11 +23,13 @@
     integrity=“sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf”
     crossorigin=“anonymous” />
   </head>
+  ​
   <body>
     <!-- section for carousel
 <section>
   <main class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
     <div class="orbit-wrapper">
+      
       <div class="orbit-controls">
         <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
         <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
@@ -59,7 +62,7 @@
       </ul>
     </div>
     <nav class="orbit-bullets">
-      <button class="is-active" data-slide="0">
+      <button class="is-active" data-slide="0"> 
         This button starts 1st -->
     <!-- <span class="show-for-sr">First slide details.</span>
         <span class="show-for-sr" data-slide-active-label>Current Slide</span>
@@ -86,6 +89,7 @@
               <!-- Extra Movies -->
             </ul>
           </li>
+
           <li>
             <a href="#">Comics</a>
             <ul class="menu" style="text-align: center">
@@ -98,6 +102,7 @@
               <!--Add extra comics below -->
             </ul>
           </li>
+
           <li>
             <a href="#">Characters</a>
             <ul class="menu">
@@ -114,24 +119,34 @@
         <!--Search Bar-->
         <form class="searchBar" autocomplete="on">
           <div class="input-group">
-            <input class="input-group-field" type="text" autocomplete="off" />
+            <input
+              class="input-group-field"
+              type="text"
+              autocomplete="off"
+              id="searchBarField"
+            />
             <div class="input-group-button">
-              <!-- <button  class="button float-right" id=searchButton value="Search">Search</button> -->
-              <!-- <button type="submit" id="searchButton"><i class="fas fa-save float-right"></i></button> -->
+              <button
+                type="submit"
+                class="button float-right"
+                id="searchButton"
+                value="Search"
+              >
+                <i class="fas fa-save float-right"></i>
+              </button>
             </div>
           </div>
         </form>
       </div>
     </div>
     <!--Cards Section-->
+
     <div class="grid-container">
       <div class="grid-x grid-margin-x small-up-2 medium-up-3">
         <div class="cell">
           <div class="card">
             <div class="card-section">
-              <h4 style="font-family: 'Bangers', cursive">
-                Iron-Man/Character about them
-              </h4>
+              <h4 style="font-family: 'Bangers', cursive">Main Character 1</h4>
               <img
                 class="cardImage"
                 src="https://via.placeholder.com/550x550"
@@ -148,12 +163,11 @@
             </div>
           </div>
         </div>
+
         <div class="cell">
           <div class="card">
             <div class="card-section">
-              <h4 style="font-family: 'Bangers', cursive">
-                Iron-Man/Movies they were in
-              </h4>
+              <h4 style="font-family: 'Bangers', cursive">Main Character 2</h4>
               <img
                 class="cardImage"
                 src="https://via.placeholder.com/550x550"
@@ -170,12 +184,11 @@
             </div>
           </div>
         </div>
+
         <div class="cell">
           <div class="card">
             <div class="card-section">
-              <h4 style="font-family: 'Bangers', cursive">
-                Iron-Man/Comic book series
-              </h4>
+              <h4 style="font-family: 'Bangers', cursive">Main Character 3</h4>
               <img
                 class="cardImage"
                 src="https://via.placeholder.com/550x550"
@@ -192,12 +205,11 @@
             </div>
           </div>
         </div>
+
         <div class="cell">
           <div class="card">
             <div class="card-section">
-              <h4 style="font-family: 'Bangers', cursive">
-                Iron-Man/Movies they were in
-              </h4>
+              <h4 style="font-family: 'Bangers', cursive">Main Character 4</h4>
               <img
                 class="cardImage"
                 src="https://via.placeholder.com/550x550"
@@ -214,8 +226,51 @@
             </div>
           </div>
         </div>
+
+        <div class="cell">
+          <div class="card">
+            <div class="card-section">
+              <h4 style="font-family: 'Bangers', cursive">Main Character 5</h4>
+              <img
+                class="cardImage"
+                src="https://via.placeholder.com/550x550"
+              />
+              <p class="pCards">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cell">
+          <div class="card">
+            <div class="card-section">
+              <h4 style="font-family: 'Bangers', cursive">Main Character 6</h4>
+              <img
+                class="cardImage"
+                src="https://via.placeholder.com/550x550"
+              />
+              <p class="pCards">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="container">
       <div class="row">
         <div
@@ -293,6 +348,7 @@
         </div>
       </div>
     </div>
+
     <script src="content-slider.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
@@ -300,6 +356,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- <script src="js/vendor/what-input.js"></script> -->
+
     <!-- Compressed JavaScript -->
     <script
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
@@ -309,6 +366,9 @@
     <script>
       $(document).foundation();
     </script>
+    ​
     <script src="script.js"></script>
   </body>
 </html>
+© 2020 GitHub, Inc. Terms Privacy Security Status Help Contact GitHub Pricing
+API Training Blog About
