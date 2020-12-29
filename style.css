@@ -20,7 +20,7 @@
     width: 23%;
 }
 body{
-    background-image: url("Images/Trial3.png");
+    /* background-image: url("Images/Universe.png"); */
     /* background-size: cover;    */
     /* this lead to working with one image but expands the page. */
     background-repeat: no-repeat;
@@ -35,10 +35,6 @@ body{
     background-color: black;
 }
 
-.card-section, li{
-    background-color: black; 
-}
-
 form {
     width: 340px;
     height: 39px;
@@ -51,6 +47,9 @@ a:hover, li:hover {
     
 }
 
+.input-group-field{
+    color: red;
+}
 
 #searchButton .searchBar a .is-dropdown-submenu-parent .menu{
     height: 39px;
@@ -72,13 +71,22 @@ border: 30px solid white;
 }
 
 p {
-color: yellow;
+color: orange;
 }
 
-.card-section:hover{
+.zoom:hover{
+    transform: scale(1.2); 
+}
+
+.card-section:hover {
     background: #f0131e;
+    /* This section is the hover for the cards already displayed */
 }
 
-.input-group-field{
-    color: red;
+.card {
+    background: black;
+}
+
+.card:hover{
+    background: #f0131e;
 }
