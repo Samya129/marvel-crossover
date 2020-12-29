@@ -70,11 +70,13 @@ $("#searchButton").on("click", function (event) {
   var cardSection = $("<div>").addClass("card-section");
   card.append(cardSection);
   // add monkey image to card
-  var cardImg = $("<img>").addClass("cardImage") //.attr("src", monkeyPic);
+  var cardImg = $("<img>").addClass("cardImage")
+  // set id of image element to heroName
+  cardImg.attr("id", heroName); //.attr("src", monkeyPic);
   card.append(cardImg);
 
 
-  // do second ajax call to MARVEL API
+  // do ajax call to MARVEL API
   $.ajax({
     url: marvelQueryURL,
     method: "GET",
@@ -137,7 +139,7 @@ $("#searchButton").on("click", function (event) {
     var firstAppearance = character.biography.firstAppearance;
     // image 
     var comicImg = character.images.lg
-    console.log(comicImg);
+    // console.log(comicImg);
 
     console.log("end second api call");
 
@@ -155,7 +157,7 @@ $("#searchButton").on("click", function (event) {
     var firstAppearanceP = $("<p>").text("First Appearance: " + firstAppearance);
     card.append(firstAppearanceP);
     // change image to coimc image
-    $("#cardImg").attr("src", comicImg);
+    $(cardImg).attr("src", comicImg);
 
     //$("#characterName").text(character.name);
     //$("#bioPic").attr("src", character.images.lg);
