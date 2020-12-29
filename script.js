@@ -41,14 +41,14 @@ var avengersMoviesArr = [
   "Spider-Man: Far From Home",
 ];
 
-var moviesMenu = $("#movie-options");
+// var moviesMenu = $(".movie-options");
 
-for(var i= 0; i <avengersMoviesArr.length; i++){
-  var newMenuButton = $("<button>" + avengersMoviesArr[i] + "</button>");      
-      moviesMenu.append("<li>" + avengersMoviesArr[i] + "</li>");
+// for(var i= 0; i <avengersMoviesArr.length; i++){
+//   var newMenuButton = $("<button>" + avengersMoviesArr[i] + "</button>");      
+//       moviesMenu.append("<li>" + avengersMoviesArr[i] + "</li>");
 
 
-}
+// }
 
 var monkeyPic =
   "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1";
