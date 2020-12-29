@@ -15,6 +15,7 @@ var HulkSearch =
 
 // example arrays to work with
 var marvelHeroesInMovies = ["spiderman", "black widow"];
+//var dropdownArr = $("#movieDropDown");
 var avengersMoviesArr = [
   "Captain America: The First Avenger",
   "Captain Marvel",
@@ -40,6 +41,16 @@ var avengersMoviesArr = [
   "Avengers: Endgame",
   "Spider-Man: Far From Home",
 ];
+
+// Trying to have array connected to drop down menu
+
+// Populate list with options:
+// for (var i = 0; i < avengersMoviesArr.length; i++) {
+//   dropdownArr.innerHTML = "";
+//   var opt = avengersMoviesArr[i];
+//   var movieList = (el.textContent = opt);
+//   dropdownArr.appendChild(el);
+// }
 
 // F U N C T I O N S
 
@@ -168,10 +179,6 @@ $("#searchButton").on("click", function (event) {
     "https://movie-database-imdb-alternative.p.rapidapi.com/?s=" +
     movie +
     "&page=1&r=json";
-
-  console.log(queryURL);
-  console.log(movie);
-
   $.ajax({
     url: queryURL,
     method: "GET",
@@ -180,9 +187,30 @@ $("#searchButton").on("click", function (event) {
       "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
     },
   }).then(function (response) {
-    // Printing the entire object to console
     var movieMarvel = response;
+    //get section to put movie information
+    //include movie poster image
+    $("#heroPic").attr("src", movieMarvel.Search[0].Poster);
+
+    var movieInfo = $("#doodle");
+    //movie title
+    var movTitle = movieMarvel.Search[0].Title;
+    //create an element
+    var movTitleP = $("<p>").text("Title:" + movTitle);
+    //append to the div & repeat
+    movieInfo.append(movTitleP);
+
+    //movie year
+    var movYear = movieMarvel.Search[0].Year;
+    var movYearP = $("<p>").text("Year:" + movYear);
+    movieInfo.append(movYearP);
+
+    //movieInfo.append(posterImg);
+    // movieInfo.append(movTitle);
+    // movieInfo.append(movYear);
+
     console.log(movieMarvel);
+
     //how to search the title
     console.log(movieMarvel.Search[0].Title);
     console.log(movieMarvel.Search[2].Title);
