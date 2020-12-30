@@ -21,11 +21,207 @@ for (i = 0; i < displayCharArr.length; i++) {
   }).then(function (response) {
     var hero = JSON.parse(response);
     console.log(hero);
-    var firstAppearance = hero.biography.firstAppearance;
-    console.log(firstAppearance);
+    var firstName = hero.name;
+    console.log(firstName);
+    var firstCardName = $("#cardName1");
+    var firstName1 = $("<h4>").text(firstName);
+    firstCardName.append(firstName1);
   });
 }
 
+//where the info from the 3 apis will be displayed,
+var heroInfo = $("#doodle");
+
+// stick one API call inside the other --> nest
+// call the card in the search button function but as large as it can get
+$("#searchButton").on("click", function (event) {
+  event.preventDefault();
+
+  //start preparing for Marvel API KEY
+  var heroName = $("#searchBarField").val().trim();
+  var marvelQueryURL =
+    "https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=99+&name=" +
+    heroName +
+    "&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a";
+
+  // do ajax call to MARVEL API
+  $.ajax({
+    url: marvelQueryURL,
+    method: "GET",
+  }).then(function (response) {
+    //Create Variables from Marvel Key
+
+    // get marvel superhero object
+    var charObj = response.data.results[0];
+    // number of comic appearances
+    var charComics = charObj.comics.available;
+    var comicsNum = $("<p>").text("Number of Comic Appearances: " + charComics);
+    heroInfo.append(comicsNum);
+
+    // number of series appearances
+    var charSeries = charObj.series.available;
+    var seriesNum = $("<p>").text(
+      "Number of Series Appearances: " + charSeries
+    );
+    heroInfo.append(seriesNum);
+    // description
+    var charDescrip = charObj.description;
+    var heroDescription = $("<p>").text("Description: " + charDescrip);
+    heroInfo.append(heroDescription);
+    // URLs
+    // var charURLS = charObj.urls;
+
+    // add header info to card
+    // var cardHeader = $("<h4>").text(heroName);
+    // heroInfo.append(cardHeader);
+
+    console.log("end first api response");
+  });
+
+  // search Superhero API for other information
+  var charSearch = $("#searchBarField").val().trim();
+  var superheroQueryURL =
+    "https://superhero-search.p.rapidapi.com/?hero=" + charSearch;
+
+  $.ajax({
+    url: superheroQueryURL,
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "54c80468acmsh43ee2bf41fce3bcp10eeadjsnb0994b7b57f7",
+      "x-rapidapi-host": "superhero-search.p.rapidapi.com",
+    },
+  }).then(function (response) {
+    var character = JSON.parse(response);
+    // characater name
+    var name = character.name;
+    var nameP = $("<p>").text("Name:" + name);
+    heroInfo.append(nameP);
+    //real name
+    var realname = character.biography.fullName;
+    var realnameP = $("<p>").text("Real Name:" + realname);
+    heroInfo.append(realnameP);
+    // height .
+    var height = character.appearance.height[0];
+    var heightP = $("<p>").text("Height: " + height);
+    heroInfo.append(heightP);
+    // weight
+    var weight = character.appearance.weight[0];
+    var weightP = $("<p>").text("Weight: " + weight);
+    heroInfo.append(weightP);
+    // place of birth
+    var placeOfBirth = character.biography.placeOfBirth;
+    var placeOfBirthP = $("<p>").text("Place of Birth: " + placeOfBirth);
+    heroInfo.append(placeOfBirthP);
+    // race
+    var race = character.appearance.race;
+    var raceP = $("<p>").text("Race: " + race);
+    heroInfo.append(raceP);
+    // occupation
+    var occupation = character.work.occupation;
+    var occupationP = $("<p>").text("Occupation: " + occupation);
+    heroInfo.append(occupationP);
+    // aliases(?)
+    var aliases = character.biography.aliases;
+    var aliases = $("<p>").text("Aliases:" + aliases);
+    heroInfo.append(aliases);
+    // first appearance(?)
+    var firstAppearance = character.biography.firstAppearance;
+    var firstAppearanceP = $("<p>").text(
+      "First Appearance: " + firstAppearance
+    );
+    heroInfo.append(firstAppearanceP);
+
+    // image to the left of the description
+    $("#heroPic").attr("src", character.images.md);
+
+    console.log("end second api call");
+
+    //$("#characterName").text(character.name);
+    //$("#characterInfo").text(character.biography.fullName);
+  });
+
+  // search movie API for movie information
+  var movie = $("#searchBarField").val().trim();
+  var queryURL =
+    "https://movie-database-imdb-alternative.p.rapidapi.com/?s=" +
+    movie +
+    "&page=1&r=json";
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "54c80468acmsh43ee2bf41fce3bcp10eeadjsnb0994b7b57f7",
+      "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
+    },
+  }).then(function (response) {
+    var movieMarvel = response;
+    //get section to put movie information
+    //include movie poster image
+    //$("#heroPic").attr("src", movieMarvel.Search[0].Poster);
+
+    //movie title
+    var movTitle = movieMarvel.Search[0].Title;
+    //create an element
+    var movTitleP = $("<p>").text("Title:" + movTitle);
+    //append to the div & repeat
+    heroInfo.append(movTitleP);
+
+    //movie year
+    var movYear = movieMarvel.Search[0].Year;
+    var movYearP = $("<p>").text("Year:" + movYear);
+    heroInfo.append(movYearP);
+    console.log(movieMarvel);
+  });
+});
+
+queryURLsuperhero = "https://superheroapi.com/api/access-token";
+
+// $("#pCards1");
+
+// var initDisplay = $("#pCards1").text;
+
+// // displayInfo(function (){
+
+// // }
+// // )
+// // character input --> comic titles appear --> grab titles--> search titles in  movie API --> display movie results
+
+// // basic functionality --> search comic titles / then compare comic titles with marvel movies
+// // select a character --> press button --> spiderman
+// // from buttons or toggle drop down etc.
+// // put 'spiderman' into search of marvel comics api
+// // search for all appearances of spiderman in comics
+// // grab comics that spiderman appears in
+// // grab their titles
+// // search query for movies that include spiderman
+// // return movies spiderman is in
+// // movies must have list of all superheros
+
+// //Back-End
+// //Movie api and Marvel api link to our application
+// //search bar
+// //search button
+// //an for loop or for each array of characters with its own buttons
+// //timeline
+// //module of each character so we avoid different pages with a hover feature
+// //dark and light toggle
+// //opacity changes as you view a character
+
+// //Back-End
+// //Movie api and Marvel api link to our application
+
+// //an for loop or for each array of characters with its own buttons
+// //timeline
+// //module of each character so we avoid different pages with a hover feature
+// //dark and light toggle
+// //opacity changes as you view a character
+// // var movie = $("#movie-input").val();
+// // var queryURL = "https://developer.marvel.com/" + movie + "&apikey=trilogy"; // Needs to be verified and updated.
+// // var apiKey = "5e14a1a12a5c9e438899f4c6ed236a58"
+// // $("#search-button").on("click", function(event) {
+
+//---------------------------------
+//Jacks BEGINNING  code
 // // S T A R T
 // console.log("START");
 
@@ -86,215 +282,33 @@ for (i = 0; i < displayCharArr.length; i++) {
 // var monkeyPic =
 //   "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1";
 
-// // stick one API call inside the other --> nest
-// // call the card in the search button function but as large as it can get
+// var grid = $("#cardAttach");
+// // add cell
+// var cell = $("<div>").addClass("cell");
+// grid.append(cell);
+// // add card to cell
+// var card = $("<div>").addClass("card");
+// cell.append(card);
+// // add card section to card
+// var cardSection = $("<div>").addClass("card-section");
+// heroInfo.append(cardSection);
+// // add monkey image to card
+// var cardImg = $("<img>").addClass("cardImage"); //.attr("src", monkeyPic);
+// heroInfo.append(cardImg);
+// create html elements and append them to the card
+// change image to coimc image
+// $("#cardImg").attr("src", comicImg);
 
-// var movieInfo = $("#doodle");
+//heroInfo.append(posterImg);
+// heroInfo.append(movTitle);
+// heroInfo.append(movYear);
 
-// $("#searchButton").on("click", function (event) {
-//   event.preventDefault();
-//   var heroName = $("#searchBarField").val().trim();
-//   var marvelQueryURL =
-//     "https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=99+&name=" +
-//     heroName +
-//     "&apikey=1f75ef821356b695e0ddea475096c267&hash=3700da1df635c0697acbbcfcd70c655a";
+// console.log(movieMarvel);
 
-//   // get/create elements to attach superhero data
-//   var grid = $("#cardAttach");
-//   // add cell
-//   var cell = $("<div>").addClass("cell");
-//   grid.append(cell);
-//   // add card to cell
-//   var card = $("<div>").addClass("card");
-//   cell.append(card);
-//   // add card section to card
-//   var cardSection = $("<div>").addClass("card-section");
-//   movieInfo.append(cardSection);
-//   // add monkey image to card
-//   var cardImg = $("<img>").addClass("cardImage"); //.attr("src", monkeyPic);
-//   movieInfo.append(cardImg);
-
-//   // do second ajax call to MARVEL API
-//   $.ajax({
-//     url: marvelQueryURL,
-//     method: "GET",
-//   }).then(function (response) {
-//     // get marvel superhero object
-//     var charObj = response.data.results[0];
-//     // number of comic appearances
-//     var charComics = charObj.comics.available;
-//     // number of serioes appearances
-//     var charSeries = charObj.series.available;
-//     // description
-//     var charDescrip = charObj.description;
-//     // URLs
-//     // var charURLS = charObj.urls;
-
-//     // add header info to card
-//     // var cardHeader = $("<h4>").text(heroName);
-//     // movieInfo.append(cardHeader);
-
-//     // add paragraphs for information from Marvel API
-//     var seriesNum = $("<p>").text(
-//       "Number of Series Appearances: " + charSeries
-//     );
-//     movieInfo.append(seriesNum);
-//     var comicsNum = $("<p>").text("Number of Comic Appearances: " + charComics);
-//     movieInfo.append(comicsNum);
-//     var heroDescription = $("<p>").text("Description: " + charDescrip);
-//     movieInfo.append(heroDescription);
-
-//     console.log("end response");
-//   });
-
-//   // search Superhero API for other information
-//   var charSearch = $("#searchBarField").val().trim();
-//   var superheroQueryURL =
-//     "https://superhero-search.p.rapidapi.com/?hero=" + charSearch;
-
-//   $.ajax({
-//     url: superheroQueryURL,
-//     method: "GET",
-//     headers: {
-//       "x-rapidapi-key": "54c80468acmsh43ee2bf41fce3bcp10eeadjsnb0994b7b57f7",
-//       "x-rapidapi-host": "superhero-search.p.rapidapi.com",
-//     },
-//   }).then(function (response) {
-//     // hulk
-//     var character = JSON.parse(response);
-//     // height .
-//     var height = character.appearance.height[0];
-//     // weight
-//     var weight = character.appearance.weight[0];
-//     // place of birth
-//     var placeOfBirth = character.biography.placeOfBirth;
-//     // race
-//     var race = character.appearance.race;
-//     // occupation
-//     var occupation = character.work.occupation;
-//     // aliases(?)
-//     var aliases = character.biography.aliases;
-//     // first appearance(?)
-//     var firstAppearance = character.biography.firstAppearance;
-//     // image
-//     var comicImg = character.images.lg;
-//     console.log(comicImg);
-
-//     console.log("end second api call");
-
-//     // create html elements and append them to the card
-//     var heightP = $("<p>").text("Height: " + height);
-//     movieInfo.append(heightP);
-//     var weightP = $("<p>").text("Weight: " + weight);
-//     movieInfo.append(weightP);
-//     var placeOfBirthP = $("<p>").text("Place of Birth: " + placeOfBirth);
-//     movieInfo.append(placeOfBirthP);
-//     var raceP = $("<p>").text("Race: " + race);
-//     movieInfo.append(raceP);
-//     var occupationP = $("<p>").text("Occupation: " + occupation);
-//     var aliases = $("<p>").text("Aliases:" + aliases);
-//     movieInfo.append(occupationP);
-//     var firstAppearanceP = $("<p>").text(
-//       "First Appearance: " + firstAppearance
-//     );
-//     movieInfo.append(firstAppearanceP);
-//     // change image to coimc image
-//     // $("#cardImg").attr("src", comicImg);
-
-//     //$("#characterName").text(character.name);
-//     $("#heroPic").attr("src", character.images.md);
-//     //$("#characterInfo").text(character.biography.fullName);
-//   });
-
-//   // search movie API for movie information
-//   var movie = $("#searchBarField").val().trim();
-//   var queryURL =
-//     "https://movie-database-imdb-alternative.p.rapidapi.com/?s=" +
-//     movie +
-//     "&page=1&r=json";
-//   $.ajax({
-//     url: queryURL,
-//     method: "GET",
-//     headers: {
-//       "x-rapidapi-key": "54c80468acmsh43ee2bf41fce3bcp10eeadjsnb0994b7b57f7",
-//       "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
-//     },
-//   }).then(function (response) {
-//     var movieMarvel = response;
-//     //get section to put movie information
-//     //include movie poster image
-//     //$("#heroPic").attr("src", movieMarvel.Search[0].Poster);
-
-//     //movie title
-//     var movTitle = movieMarvel.Search[0].Title;
-//     //create an element
-//     var movTitleP = $("<p>").text("Title:" + movTitle);
-//     //append to the div & repeat
-//     movieInfo.append(movTitleP);
-
-//     //movie year
-//     var movYear = movieMarvel.Search[0].Year;
-//     var movYearP = $("<p>").text("Year:" + movYear);
-//     movieInfo.append(movYearP);
-
-//     //movieInfo.append(posterImg);
-//     // movieInfo.append(movTitle);
-//     // movieInfo.append(movYear);
-
-//     console.log(movieMarvel);
-
-//     //how to search the title
-//     console.log(movieMarvel.Search[0].Title);
-//     console.log(movieMarvel.Search[2].Title);
-//     console.log(movieMarvel.Search[1].Title);
-//     console.log(movieMarvel.Search[0].Poster);
-//     console.log(movieMarvel.Search[0].Year);
-//     //maybe can divide movies by years for the phases? starting with 2008, create a for loop for that,
-//   });
-// });
-
-// queryURLsuperhero = "https://superheroapi.com/api/access-token";
-
-// $("#pCards1");
-
-// var initDisplay = $("#pCards1").text;
-
-// // displayInfo(function (){
-
-// // }
-// // )
-// // character input --> comic titles appear --> grab titles--> search titles in  movie API --> display movie results
-
-// // basic functionality --> search comic titles / then compare comic titles with marvel movies
-// // select a character --> press button --> spiderman
-// // from buttons or toggle drop down etc.
-// // put 'spiderman' into search of marvel comics api
-// // search for all appearances of spiderman in comics
-// // grab comics that spiderman appears in
-// // grab their titles
-// // search query for movies that include spiderman
-// // return movies spiderman is in
-// // movies must have list of all superheros
-
-// //Back-End
-// //Movie api and Marvel api link to our application
-// //search bar
-// //search button
-// //an for loop or for each array of characters with its own buttons
-// //timeline
-// //module of each character so we avoid different pages with a hover feature
-// //dark and light toggle
-// //opacity changes as you view a character
-
-// //Back-End
-// //Movie api and Marvel api link to our application
-
-// //an for loop or for each array of characters with its own buttons
-// //timeline
-// //module of each character so we avoid different pages with a hover feature
-// //dark and light toggle
-// //opacity changes as you view a character
-// // var movie = $("#movie-input").val();
-// // var queryURL = "https://developer.marvel.com/" + movie + "&apikey=trilogy"; // Needs to be verified and updated.
-// // var apiKey = "5e14a1a12a5c9e438899f4c6ed236a58"
-// // $("#search-button").on("click", function(event) {
+//how to search the title
+// console.log(movieMarvel.Search[0].Title);
+// console.log(movieMarvel.Search[2].Title);
+// console.log(movieMarvel.Search[1].Title);
+// console.log(movieMarvel.Search[0].Poster);
+// console.log(movieMarvel.Search[0].Year);
+//maybe can divide movies by years for the phases? starting with 2008, create a for loop for that,
