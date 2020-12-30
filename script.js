@@ -44,15 +44,16 @@ var avengersMoviesArr = [
 
 // Trying to have array connected to drop down menu
 
-// Populate list with options:
-// for (var i = 0; i < avengersMoviesArr.length; i++) {
-//   dropdownArr.innerHTML = "";
-//   var opt = avengersMoviesArr[i];
-//   var movieList = (el.textContent = opt);
-//   dropdownArr.appendChild(el);
-// }
+for (i = 0; i < avengersMoviesArr.length; i++) {
+  $("#selectMovieID").append("<option>" + avengersMoviesArr[i] + "</option>");
 
-// F U N C T I O N S
+  // avengersMoviesArr.forEach(function () {
+  // const parentElement = document.querySelector(""); // DOM location when buttons will be added
+  //   const button = document.createElement("button");
+  //   button.innerText = MovieList;
+  //   MovieList.appendChild(button); // to add new element to DOM
+  // });
+}
 
 var monkeyPic =
   "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1";
