@@ -3,6 +3,9 @@
     font-family: 'Bangers', cursive;
     color: white;
  }
+ .headerImage{
+     margin-top: -25px;
+ }
 
  .nav-container{
     display: flex;
@@ -75,12 +78,21 @@ background-color: rgb(103, 52, 170);
 border: 30px solid black;
 }
 
+.scrollable{
+
+    height: 600px;
+    overflow-y: auto;
+}
+.padding{
+    padding: 1.5rem;
+}
+
 p {
 color:yellow;
 }
 
 .zoom:hover{
-    transform: scale(1.2); 
+    transform: scale(1.1); 
 }
 
 .card-section:hover {

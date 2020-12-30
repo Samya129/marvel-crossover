@@ -41,14 +41,15 @@ var avengersMoviesArr = [
   "Spider-Man: Far From Home",
 ];
 
-// var moviesMenu = $(".movie-options");
+var moviesMenu = $(".movie-options");
 
-// for(var i= 0; i <avengersMoviesArr.length; i++){
-//   var newMenuButton = $("<button>" + avengersMoviesArr[i] + "</button>");      
-//       moviesMenu.append("<li>" + avengersMoviesArr[i] + "</li>");
-
-
-// }
+for(var i= 0; i <avengersMoviesArr.length; i++){
+  var newMenuButton = $("<button>");      
+  newMenuButton.text(avengersMoviesArr[i])
+  var li = $("<li>")
+  li.append(newMenuButton)
+      moviesMenu.append(li);
+}
 
 var monkeyPic =
   "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1";
@@ -72,12 +73,15 @@ $("#searchButton").on("click", function (event) {
   var grid = $("#cardAttach");
   // add cell
   var cell = $("<div>").addClass("cell");
+  cell.addClass("scrollable")
+  
   grid.append(cell);
   // add card to cell
   var card = $("<div>").addClass("card");
   cell.append(card);
   // add card section to card
   var cardSection = $("<div>").addClass("card-section");
+  card.addClass("padding zoom")
   card.append(cardSection);
   // add monkey image to card
   var cardImg = $("<img>").addClass("cardImage") //.attr("src", monkeyPic);
