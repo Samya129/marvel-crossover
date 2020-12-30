@@ -49,14 +49,19 @@ p {
   color: yellow;
 }
 
-h4:hover,
-.pCards:hover {
-  background: #f0131e;
+.zoom:hover {
+  transform: scale(1.2);
 }
 
-/* .input-group-field{
-    color: red;
-} */
-/* .test:hover{
-   background: #875094;
-} */
+.card-section:hover {
+  background: #f0131e;
+  /* This section is the hover for the cards already displayed */
+}
+
+.card {
+  background: black;
+}
+
+.card:hover {
+  background: #f0131e;
+}
