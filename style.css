@@ -20,6 +20,7 @@
     width: 23%;
 }
 body{
+    background-color: rgb(80, 77, 77);
     /* background-image: url("Images/Universe.png"); */
     /* background-size: cover;    */
     /* this lead to working with one image but expands the page. */
@@ -48,15 +49,19 @@ a:hover, li:hover {
 }
 
 .input-group-field{
-    color: red;
+    color: #008000;
 }
 
 #searchButton .searchBar a .is-dropdown-submenu-parent .menu{
     height: 39px;
 }
 
+#searchButton{
+    color: yellow;
+    background-color: rgb(103, 52, 170) !important;
+}
 #searchButton:hover{
-    background-color: #f0131e;
+    background-color: yellow;
 }
 h4 {
     font-family: 'Bangers', cursive;
@@ -65,13 +70,13 @@ h4 {
     }
 
 .grid-x.grid-margin-x.small-up-2.medium-up-3{
-padding-top: 15px;
-background-color: black;
-border: 30px solid white;
+padding-top: 12px;
+background-color: rgb(103, 52, 170);
+border: 30px solid black;
 }
 
 p {
-color: orange;
+color:yellow;
 }
 
 .zoom:hover{
