@@ -9,14 +9,11 @@ var displayCharArr = [
   "Falcon",
   "Scarlet Witch",
   "Ant-Man",
-  "Wasp",
   "Hawkeye",
   "Star-Lord",
-  "Nebula",
   "Gamora",
   "Groot",
-  "Mantis",
-  "Doctor Strange",
+  "Nebula",
 ];
 //add attributes and elements
 for (i = 0; i < displayCharArr.length; i++) {
@@ -32,26 +29,33 @@ for (i = 0; i < displayCharArr.length; i++) {
   }).then(function (response) {
     var hero = JSON.parse(response);
     console.log(hero);
+    //make elements dynamically to create cards
     var cellElement = $("<div>").addClass("cell");
     var zoomElement = $("<div>").addClass("zoom");
     var cardSectionElement = $("<div>").addClass("card-section");
     cardSectionElement.attr("style", "font-family: 'Bangers', cursive;");
+    //Card Header Name
     var heroName = hero.name;
     var heroNameElement = $("<h4>").text(heroName);
     cardSectionElement.append(heroNameElement);
+    //Card Image
     var imageElement = $("<img>");
     imageElement.attr("src", hero.images.md);
     imageElement.attr("id", "HeroPic");
     cardSectionElement.append(imageElement);
+    //Real Name Description
     var realname = hero.biography.fullName;
     var realnameP = $("<p>").text("Real Name:" + realname);
     cardSectionElement.append(realnameP);
+
     zoomElement.append(cardSectionElement);
     cellElement.append(zoomElement);
     $("#cardAttach").append(cellElement);
     // cellElement.on('click', clickCardInfo(heroName));
-    cellElement.on("click", function () {
+    cellElement.one("click", function () {
       clickCardInfo(heroName);
+      $("#cardAttach").hide();
+      $("#doodle").show();
     });
     // var firstName = hero.name;
     // console.log(firstName);
@@ -60,6 +64,7 @@ for (i = 0; i < displayCharArr.length; i++) {
     // firstCardName.append(firstName1);
   });
 }
+
 function clickCardInfo(heroName) {
   var heroInfo = $("#doodle");
   var marvelQueryURL =
@@ -186,10 +191,12 @@ function clickCardInfo(heroName) {
 }
 // stick one API call inside the other --> nest
 // call the card in the search button function but as large as it can get
-$("#searchButton").on("click", function (event) {
+$("#searchButton").one("click", function (event) {
   event.preventDefault();
   //start preparing for Marvel API KEY
   var heroName = $("#searchBarField").val().trim();
   clickCardInfo(heroName);
+  $("#cardAttach").hide();
+  $("#doodle").show();
 });
 // queryURLsuperhero = "https://superheroapi.com/api/access-token";
