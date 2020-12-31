@@ -3,7 +3,21 @@
     font-family: 'Bangers', cursive;
     color: white;
  }
- 
+
+.orbit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+ .orbit1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+ }
+
 .menu {
     background-color: black;
 }
