@@ -1,73 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-*  {
-    font-family: 'Bangers', cursive;
-    color: white;
- }
-
-.orbit {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+* {
+  font-family: "Bangers", cursive;
+  color: white;
 }
 
- .orbit1 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
- }
+.orbit1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
 
 .menu {
-    background-color: black;
+  background-color: black;
 }
 
-.card-section, li, p{
-    background-color: black; 
+.card-section,
+li,
+p {
+  background-color: black;
 }
 
 form {
-    width: 340px;
-    height: 39px;
+  width: 340px;
+  height: 39px;
 }
-a{
-    color:white;
+a {
+  color: white;
 }
-a:hover, li:hover {
-    background-color: #f0131e;
-}
-
-
-#searchButton .searchBar a .is-dropdown-submenu-parent .menu{
-    height: 39px;
+a:hover,
+li:hover {
+  background-color: #f0131e;
 }
 
-#searchButton:hover{
-    background-color: #f0131e;
+#searchButton .searchBar a .is-dropdown-submenu-parent .menu {
+  height: 39px;
+}
+
+#searchButton:hover {
+  background-color: #f0131e;
 }
 h4 {
-    font-family: 'Bangers', cursive;
-    color: yellow;
-    text-align: center;
-    }
+  font-family: "Bangers", cursive;
+  color: yellow;
+  text-align: center;
+}
 
-.grid-x.grid-margin-x.small-up-2.medium-up-3{
-padding-top: 15px;
-background-color: black;
-border: 30px solid white;
+.grid-x.grid-margin-x.small-up-2.medium-up-3 {
+  padding-top: 15px;
+  background-color: black;
+  border: 30px solid white;
 }
 
 p {
-color: yellow;
+  color: yellow;
 }
 
-h4:hover, .pCards:hover{
-    background: #f0131e;
+.zoom:hover {
+  transform: scale(1.2);
 }
 
-/* .input-group-field{
-    color: red;
-} */
-/* .test:hover{
-   background: #875094;
-} */
+.card-section:hover {
+  background: #f0131e;
+  /* This section is the hover for the cards already displayed */
+}
+
+.card {
+  background: black;
+}
+
+.card:hover {
+  background: #f0131e;
+}
