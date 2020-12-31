@@ -3,6 +3,7 @@
     font-family: 'Bangers', cursive;
     color: white;
  }
+
  .headerImage{
      margin-top: -25px;
  }
@@ -10,29 +11,23 @@
  .nav-container{
     display: flex;
     flex-direction: row;
-    border-top: solid black;
-    border-bottom: solid black;
+    border-top: solid white;
+    border-bottom: solid white;
 }
+
 .nav-right{
     display: flex;
     justify-content: flex-end;
     width: 77%;
     background-color: black;
 }
+
 .nav-left{
     width: 23%;
 }
+
 body{
     background-color: rgb(80, 77, 77);
-    /* background-image: url("Images/Universe.png"); */
-    /* background-size: cover;    */
-    /* this lead to working with one image but expands the page. */
-    background-repeat: no-repeat;
-    /* object-fit: cover; */
-    /* background-repeat: unset; */
-    background-repeat: round;
-    width: 100%;
-    
 }
  
 .menu {
@@ -43,12 +38,14 @@ form {
     width: 340px;
     height: 39px;
 }
+
 a{
-    color:white;
+    color:yellow;
+    background-color:  rgb(103, 52, 170) !important;
 }
+
 a:hover, li:hover {
     background-color: #f0131e;
-    
 }
 
 .input-group-field{
@@ -60,12 +57,13 @@ a:hover, li:hover {
 }
 
 #searchButton{
-    color: yellow;
     background-color: rgb(103, 52, 170) !important;
 }
-#searchButton:hover{
-    background-color: yellow;
+
+.fa-bolt{
+    color: yellow;
 }
+
 h4 {
     font-family: 'Bangers', cursive;
     color: yellow;
@@ -79,10 +77,10 @@ border: 30px solid black;
 }
 
 .scrollable{
-
     height: 600px;
     overflow-y: auto;
 }
+
 .padding{
     padding: 1.5rem;
 }

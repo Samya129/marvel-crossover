@@ -74,7 +74,7 @@ $("#searchButton").on("click", function (event) {
   // add cell
   var cell = $("<div>").addClass("cell");
   cell.addClass("scrollable")
-  
+
   grid.append(cell);
   // add card to cell
   var card = $("<div>").addClass("card");
@@ -216,3 +216,4 @@ queryURLsuperhero = "https://superheroapi.com/api/access-token";
 // var queryURL = "https://developer.marvel.com/" + movie + "&apikey=trilogy"; // Needs to be verified and updated.
 // var apiKey = "5e14a1a12a5c9e438899f4c6ed236a58"
 // $("#search-button").on("click", function(event) {
+
