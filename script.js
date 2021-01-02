@@ -14,7 +14,6 @@ var HulkSearch =
 
 // example arrays to work with
 var marvelHeroesInMovies = ["spiderman", "black widow"];
-var heroesAndMovies = [{"spiderman": "iron man", "thor"}, {"iron man": "iron man", "iron man 2", "iron man 3"}];
 var avengersMoviesArr = [
   "Captain America: The First Avenger",
   "Captain Marvel",
