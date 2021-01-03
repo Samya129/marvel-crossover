@@ -284,170 +284,201 @@ $(".heroPicClass").click(function (e) {
 // }
 
 var herosWithMovies = [
-  {'Iron Man': img.src = ['Images\mcu-ironman-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg', 'Images\mcu-marvel avengers.jpg','Images\mcu-ironman3-poster.jpg','Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-spderman-homecoming-poster.jpg':'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name:'Iron Man', image: ['Images\mcu-ironman-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg', 'Images\mcu-marvel avengers.jpg','Images\mcu-ironman3-poster.jpg','Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-spderman-homecoming-poster.jpg','Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
   
-  {'Captain America': img.src = ['Images\mcu-captain-america-poster.jpg','Images\mcu-marvel avengers-poster.jpg','Images\mcu-captain-america-winter-solider-poster.jpg','Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-spderman-homecoming-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-captian-marvel-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Captain America', imgage: ['Images\mcu-captain-america-poster.jpg','Images\mcu-marvel avengers-poster.jpg','Images\mcu-captain-america-winter-solider-poster.jpg','Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-spderman-homecoming-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-captian-marvel-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
   
-  {"Black Panther": img.src = ['Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-black-panther-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Black Panther', image:  ['Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-black-panther-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
   
-  {"Thor": img.src =['Images\mcu-thor-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg', 'Images\mcu-thor-dark-world-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-doctor-strange-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Thor', image: ['Images\mcu-thor-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg', 'Images\mcu-thor-dark-world-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-doctor-strange-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
   
-  {"Hulk": img.src = ['Images\mcu-hulk-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg',  'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Hulk', image:  ['Images\mcu-hulk-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg',  'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
   
-  {"Doctor Strange": img.src = ['Images\mcu-doctor-strange-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Doctor Strange', image:  ['Images\mcu-doctor-strange-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
   
-  {"Spider-man": img.src = ['Images\mcu-ironman2-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg',
-  'Images\mcu-spderman-homecoming-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg','Images\mcu-spderman-far-from-home-poster.jpg']},
+  {
+    name: 'Spider-man', image:  ['Images\mcu-ironman2-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg',
+    name: 'Images\mcu-spderman-homecoming-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg','Images\mcu-spderman-far-from-home-poster.jpg']
+  },
   
-  {"Falcon": img.src = ['Images\mcu-captain-america-winter-solider-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Falcon', image:  ['Images\mcu-captain-america-winter-solider-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
   
-  {"Scarlet Witch": img.src = ['Images\mcu-captain-america-winter-solider-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Scarlet Witch', image:  ['Images\mcu-captain-america-winter-solider-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
   
-  {"Ant-Man": img.src = ['Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-antman-&-wasp-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Ant-Man', image:  ['Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-antman-&-wasp-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
   
-  {"Hawkeye": img.src = ['Images\mcu-marvel avengers.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Hawkeye', image:  ['Images\mcu-marvel avengers.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
 
-  {"Star-Lord": img.src = ['Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Star-Lord', image:  ['Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
   
-  {"Gamora": img.src = ['Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Gamora', image:  ['Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
   
-  {"Groot": img.src = ['Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Groot', image:  ['Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
   
-  {"Nebula": img.src = ['Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']},
+  {
+    name: 'Nebula', image:  ['Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+  },
 ];
+console.log(herosWithMovies);
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[0]=="Iron Man") 
+//   if(heroNames[0]=='Iron Man') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-ironman-poster.jpg','Images\mcu-marvel avengers-poster.jpg','Images\mcu-marvel avengers.jpg','Images\mcu-ironman3-poster.jpg','Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-spderman-homecoming-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg' ; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[1]=="Captain America") 
+//   if(heroNames[1]=='Captain America') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-captain-america-poster.jpg','Images\mcu-marvel avengers-poster.jpg','Images\mcu-captain-america-winter-solider-poster.jpg','Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-spderman-homecoming-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-captian-marvel-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg' ; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[2]=="Black Panther") 
+//   if(heroNames[2]=='Black Panther') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-black-panther-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg' ; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[3]=="Thor") 
+//   if(heroNames[3]=='Thor') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-thor-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg', 'Images\mcu-thor-dark-world-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-doctor-strange-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg' ; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[4]=="Hulk") 
+//   if(heroNames[4]=='Hulk') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-hulk-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg',  'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg' ; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[5]=="Doctor Strange") 
+//   if(heroNames[5]=='Doctor Strange') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-doctor-strange-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg' ; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[6]=="Spider-man") 
+//   if(heroNames[6]=='Spider-man') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-ironman2-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg',
 // 'Images\mcu-spderman-homecoming-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg','Images\mcu-spderman-far-from-home-poster.jpg' ; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[7]=="Falcon") 
+//   if(heroNames[7]=='Falcon') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-captain-america-winter-solider-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[8]=="Scarlet Witch") 
+//   if(heroNames[8]=='Scarlet Witch') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-captain-america-winter-solider-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[9]=="Ant-Man") 
+//   if(heroNames[9]=='Ant-Man') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-antman-&-wasp-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[10]=="Hawkeye") 
+//   if(heroNames[10]=='Hawkeye') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-marvel avengers.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[11]=="Star-Lord") 
+//   if(heroNames[11]=='Star-Lord') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[12]=="Gamora") 
+//   if(heroNames[12]=='Gamora') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[13]=="Groot") 
+//   if(heroNames[13]=='Groot') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
 
 // for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[14]=="Nebula") 
+//   if(heroNames[14]=='Nebula') 
 //   var movieImg = document.createElement('img'); 
 //   img.src =  
 // 'Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
 //   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = "Image Element Added.";  
+//   down.innerHTML = 'Image Element Added.';  
 // }
