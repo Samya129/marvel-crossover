@@ -22,8 +22,20 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
     crossorigin="anonymous" />
   </head>
+
   <body>
-    <img src="Images/header.png" alt="" />
+    <p><button class="button" data-open="exampleModal1">Click me for a modal</button></p>
+
+    <div class="reveal" id="exampleModal1" data-reveal>
+      <h1>Awesome. I Have It.</h1>
+      <p class="lead">Your couch. It is mine.</p>
+      <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+    <img src="Assets/header.png" alt="Header image titled: Marvel Overlaps" />
     <!-- <img src="Images/Universe.png" alt="Marvel Universe Image"> -->
     <div class="nav-container">
       <div class="nav-left">
@@ -153,7 +165,8 @@
           data-something
         >
           <div class="container Moving">
-            <p id="doodle">
+            <div id="doodle">
+            </div>
           </div>
         </div>
         <div class="columns small-6 right" data-sticky-container>
@@ -172,7 +185,55 @@
       </div>
     </div>
   </div>
-    <script src="content-slider.js"></script>
+<!-- 
+<button id="modal-btn" class="button">Click Here</button>
+
+  <div id="my-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Hero Name</h2>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage"
+        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1>
+        <p>This is my modal</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+          repellendus nisi, sunt consectetur ipsa velit repudiandae aperiam modi
+          quisquam nihil nam asperiores doloremque mollitia dolor deleniti
+          quibusdam nemo commodi ab.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+          repellendus nisi, sunt consectetur ipsa velit repudiandae aperiam modi
+          quisquam nihil nam asperiores doloremque mollitia dolor deleniti
+          quibusdam nemo commodi ab.
+        </p>
+      </div>
+      <div id="modalBelow" class="modal-body">
+        <img class="blockImage"
+        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1>
+        <img class="blockImage"
+        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1> 
+        <img class="blockImage"
+        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1> 
+        <img class="blockImage"
+        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1> 
+        <img class="blockImage"
+        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1> 
+        <img class="blockImage"
+        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1> 
+    </div>
+      <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div>
+    </div>
+  </div>
+ -->
+
+
+    <!-- <script src="content-slider.js"></script> -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
       integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="

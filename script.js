@@ -15,6 +15,7 @@ var displayCharArr = [
   "Groot",
   "Nebula",
 ];
+
 //add attributes and elements
 for (i = 0; i < displayCharArr.length; i++) {
   var superheroQueryURL =
@@ -23,29 +24,29 @@ for (i = 0; i < displayCharArr.length; i++) {
     url: superheroQueryURL,
     method: "GET",
     headers: {
-      "x-rapidapi-key": "54c80468acmsh43ee2bf41fce3bcp10eeadjsnb0994b7b57f7",
+      "x-rapidapi-key": "a8a7d89ab3msha883a3614974b83p18f91bjsne43e3e3a76a2",
       "x-rapidapi-host": "superhero-search.p.rapidapi.com",
     },
   }).then(function (response) {
     var hero = JSON.parse(response);
-    console.log(hero);
-    //make elements dynamically to create cards
+    // console.log(hero);
+    // make elements dynamically to create cards
     var cellElement = $("<div>").addClass("cell");
     var zoomElement = $("<div>").addClass("zoom");
     var cardSectionElement = $("<div>").addClass("card-section");
     cardSectionElement.attr("style", "font-family: 'Bangers', cursive;");
-    //Card Header Name
+    // Card Header Name
     var heroName = hero.name;
     var heroNameElement = $("<h4>").text(heroName);
     cardSectionElement.append(heroNameElement);
-    //Card Image
+    // Card Image
     var imageElement = $("<img>");
     imageElement.attr("src", hero.images.md);
     imageElement.attr("id", "HeroPic");
     cardSectionElement.append(imageElement);
-    //Real Name Description
+    // Real Name Description
     var realname = hero.biography.fullName;
-    var realnameP = $("<p>").text("Real Name:" + realname);
+    var realnameP = $("<p>").text("Real Name: " + realname);
     cardSectionElement.append(realnameP);
     zoomElement.append(cardSectionElement);
     cellElement.append(zoomElement);
@@ -63,6 +64,9 @@ for (i = 0; i < displayCharArr.length; i++) {
     // firstCardName.append(firstName1);
   });
 }
+
+
+// CLICK CARD FUNCTION 
 function clickCardInfo(heroName) {
   var heroInfo = $("#doodle");
   var marvelQueryURL =
@@ -74,8 +78,9 @@ function clickCardInfo(heroName) {
     url: marvelQueryURL,
     method: "GET",
   }).then(function (response) {
-    //Create Variables from Marvel Key
-    //where the info from the 3 apis will be displayed,
+    // Create Variables from Marvel Key
+    // where the info from the 3 apis will be displayed,
+
     // get marvel superhero object
     var charObj = response.data.results[0];
     // number of comic appearances
@@ -114,11 +119,11 @@ function clickCardInfo(heroName) {
     var character = JSON.parse(response);
     // characater name
     var name = character.name;
-    var nameP = $("<p>").text("Name:" + name);
+    var nameP = $("<p>").text("Name: " + name);
     heroInfo.append(nameP);
     //real name
     var realname = character.biography.fullName;
-    var realnameP = $("<p>").text("Real Name:" + realname);
+    var realnameP = $("<p>").text("Real Name: " + realname);
     heroInfo.append(realnameP);
     // height .
     var height = character.appearance.height[0];
@@ -142,7 +147,7 @@ function clickCardInfo(heroName) {
     heroInfo.append(occupationP);
     // aliases(?)
     var aliases = character.biography.aliases;
-    var aliases = $("<p>").text("Aliases:" + aliases);
+    var aliases = $("<p>").text("Aliases: " + aliases);
     heroInfo.append(aliases);
     // first appearance(?)
     var firstAppearance = character.biography.firstAppearance;
@@ -151,6 +156,11 @@ function clickCardInfo(heroName) {
     );
     heroInfo.append(firstAppearanceP);
     // image to the left of the description
+    // console.log(character.images.md);
+    // var bioPic = $("<img>").attr(src=character.images.md);
+    // //bioPic.attr("id"="bioPic");
+    // heroInfo.prepend(bioPic);
+
     $("#heroPic").attr("src", character.images.md);
     console.log("end second api call");
     //$("#characterName").text(character.name);
@@ -189,7 +199,7 @@ function clickCardInfo(heroName) {
 }
 // stick one API call inside the other --> nest
 // call the card in the search button function but as large as it can get
-$("#searchButton").one("click", function (event) {
+$("#searchButton").on("click", function (event) {
   event.preventDefault();
   //start preparing for Marvel API KEY
   var heroName = $("#searchBarField").val().trim();
@@ -198,3 +208,71 @@ $("#searchButton").one("click", function (event) {
   $("#doodle").show();
 });
 // queryURLsuperhero = "https://superheroapi.com/api/access-token";
+
+// // modal stuff
+
+// Foundation reveal - with Jquery
+  // Create reveal modal element
+  var revealElem = $("<div>").attr("id", "reveal-elem").addClass("reveal");
+  // create layout of modal
+  var heroNameSpan = $("<span>").attr("id", "hero-name");
+  revealElem.append($("<h1>").append(heroNameSpan));
+  // create close button and append to modal
+  var closeBtn = $("<button>").addClass("close-button");
+  closeBtn.append($("<span>").attr("aria-hidden", "true").html("&times;"));
+  closeBtn.click(function(e) {
+    revealElem.foundation('close');
+  })
+  revealElem.append(closeBtn);
+  var revealObj = new Foundation.Reveal(revealElem, {});
+​
+  var heroNames = ["bob", "steve", "alan"];
+  // Create something to trigger reveal
+  for (var i = 0; i < heroNames.length; i++) {
+    var heroImage = $("<img>").attr({
+      src: "planet.jpg",
+      "data-heroName": heroNames[i]
+    });
+    heroImage.addClass("hero-image");
+    $("#hero-cards").append(heroImage);
+  }
+​
+  $(".hero-image").click(function(e) {
+    var heroName = $(this).attr("data-heroName");
+    heroNameSpan.text("Our superasdfa sd:" + heroName);
+    revealElem.foundation('open');
+  })
+
+
+
+
+
+
+
+
+// // Get DOM Elements
+// const modal = $('#my-modal');
+// const modalBtn = $('#modal-btn');
+// const closeBtn = $('.close');
+
+// // Events
+// modalBtn.on('click', openModal);
+// closeBtn.on('click', closeModal);
+// // window.on('click', outsideClick);
+
+// // Open
+// function openModal() {
+//   modal.display = 'block';
+// }
+
+// // Close
+// function closeModal() {
+//   modal.display = 'none';
+// }
+
+// // Close If Outside Click
+// function outsideClick(e) {
+//   if (e.target == modal) {
+//     modal.display = 'none';
+//   }
+// }
