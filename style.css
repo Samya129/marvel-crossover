@@ -4,11 +4,17 @@
   color: white;
 }
 
-.orbit1 {
+.orbit {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 75%;
+  bottom: 10px;
+  width: 50%;
+}
+
+.orbit-image {
+  height: 400px;
+  width: 600px;
 }
 
 .menu {
@@ -71,4 +77,9 @@ p {
 
 .card:hover {
   background: #f0131e;
+}
+
+.container1{
+  display: block;
+
 }
