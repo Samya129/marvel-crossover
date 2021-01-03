@@ -16,6 +16,24 @@ var displayCharArr = [
   "Nebula",
 ];
 
+// Foundation reveal - with Jquery
+// Create reveal modal element
+var revealElem = $("<div>").attr("id", "reveal-elem").addClass("reveal");
+// create layout of modal
+var heroNameSpan = $("<span>").attr("id", "hero-name");
+revealElem.append($("<h1>").append(heroNameSpan));
+// create close button and append to modal
+var closeBtn = $("<button>").addClass("close-button");
+closeBtn.append($("<span>").attr("aria-hidden", "true").html("&times;"));
+closeBtn.click(function(e) {
+  revealElem.foundation('close');
+})
+revealElem.append(closeBtn);
+// bring revealElem into being (?)
+var revealObj = new Foundation.Reveal(revealElem, {});
+
+
+
 //add attributes and elements
 for (i = 0; i < displayCharArr.length; i++) {
   var superheroQueryURL =
@@ -39,9 +57,13 @@ for (i = 0; i < displayCharArr.length; i++) {
     var heroName = hero.name;
     var heroNameElement = $("<h4>").text(heroName);
     cardSectionElement.append(heroNameElement);
-    // Card Image
+    // Card Image --> give image a data-attribute of heroName[i] to call upon later when img clicked
     var imageElement = $("<img>");
-    imageElement.attr("src", hero.images.md);
+    imageElement.attr({
+      "src": hero.images.md,
+      "data-heroName": displayCharArr[i]
+    });
+    imageElement.addClass("heroPicClass");
     imageElement.attr("id", "HeroPic");
     cardSectionElement.append(imageElement);
     // Real Name Description
@@ -52,11 +74,12 @@ for (i = 0; i < displayCharArr.length; i++) {
     cellElement.append(zoomElement);
     $("#cardAttach").append(cellElement);
     // cellElement.on('click', clickCardInfo(heroName));
-    cellElement.one("click", function () {
+    cellElement.on("click", function () {
       clickCardInfo(heroName);
       $("#cardAttach").hide();
       $("#doodle").show();
     });
+
     // var firstName = hero.name;
     // console.log(firstName);
     // var firstCardName = $("#cardName1");
@@ -68,7 +91,9 @@ for (i = 0; i < displayCharArr.length; i++) {
 
 // CLICK CARD FUNCTION 
 function clickCardInfo(heroName) {
-  var heroInfo = $("#doodle");
+  heroNameSpan.text("Our superasdfa sd:" + heroName);
+  // changed "#doodle" grab to modal object
+  var heroInfo = revealObj;
   var marvelQueryURL =
     "https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=99+&name=" +
     heroName +
@@ -163,6 +188,7 @@ function clickCardInfo(heroName) {
 
     $("#heroPic").attr("src", character.images.md);
     console.log("end second api call");
+    revealElem.foundation('open');
     //$("#characterName").text(character.name);
     //$("#characterInfo").text(character.biography.fullName);
   });
@@ -211,81 +237,34 @@ $("#searchButton").on("click", function (event) {
 
 // // modal stuff
 
-// create modal element
+//      Create modal element
+
+
+
+// show modal on image press    // change hero-image class, data-heroName
+$(".heroPicClass").click(function(e) {
+  e.preventDefault();
+  var heroName = $(this).attr("data-heroName");
+  heroNameSpan.text("Our superasdfa sd:" + heroName);
+  revealElem.foundation('open');
+});
+
 // get hero name and set it as header
   // cell
 // get hero image and float it left + display/wrap hero info text
   // cell
 // display movies hero has been in
   // cell
-// show modal on image press
 
 
+  // var heroNames = ["bob", "steve", "alan"];
+  // // Create something to trigger reveal
+  // for (var i = 0; i < heroNames.length; i++) {
+  //   var heroImage = $("<img>").attr({
+  //     src: "planet.jpg",
+  //     "data-heroName": heroNames[i]
+  //   });
+  //   heroImage.addClass("hero-image");
+  //   $("#hero-cards").append(heroImage);
+  // }
 
-
-// Foundation reveal - with Jquery
-  // Create reveal modal element
-  var revealElem = $("<div>").attr("id", "reveal-elem").addClass("reveal");
-  // create layout of modal
-  var heroNameSpan = $("<span>").attr("id", "hero-name");
-  revealElem.append($("<h1>").append(heroNameSpan));
-  // create close button and append to modal
-  var closeBtn = $("<button>").addClass("close-button");
-  closeBtn.append($("<span>").attr("aria-hidden", "true").html("&times;"));
-  closeBtn.click(function(e) {
-    revealElem.foundation('close');
-  })
-  revealElem.append(closeBtn);
-  // bring revealElem into being (?)
-  var revealObj = new Foundation.Reveal(revealElem, {});
-​
-  var heroNames = ["bob", "steve", "alan"];
-  // Create something to trigger reveal
-  for (var i = 0; i < heroNames.length; i++) {
-    var heroImage = $("<img>").attr({
-      src: "planet.jpg",
-      "data-heroName": heroNames[i]
-    });
-    heroImage.addClass("hero-image");
-    $("#hero-cards").append(heroImage);
-  }
-​
-  $(".hero-image").click(function(e) {
-    var heroName = $(this).attr("data-heroName");
-    heroNameSpan.text("Our superasdfa sd:" + heroName);
-    revealElem.foundation('open');
-  })
-
-
-
-
-
-
-
-
-// // Get DOM Elements
-// const modal = $('#my-modal');
-// const modalBtn = $('#modal-btn');
-// const closeBtn = $('.close');
-
-// // Events
-// modalBtn.on('click', openModal);
-// closeBtn.on('click', closeModal);
-// // window.on('click', outsideClick);
-
-// // Open
-// function openModal() {
-//   modal.display = 'block';
-// }
-
-// // Close
-// function closeModal() {
-//   modal.display = 'none';
-// }
-
-// // Close If Outside Click
-// function outsideClick(e) {
-//   if (e.target == modal) {
-//     modal.display = 'none';
-//   }
-// }
