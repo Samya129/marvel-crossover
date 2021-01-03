@@ -211,6 +211,18 @@ $("#searchButton").on("click", function (event) {
 
 // // modal stuff
 
+// create modal element
+// get hero name and set it as header
+  // cell
+// get hero image and float it left + display/wrap hero info text
+  // cell
+// display movies hero has been in
+  // cell
+// show modal on image press
+
+
+
+
 // Foundation reveal - with Jquery
   // Create reveal modal element
   var revealElem = $("<div>").attr("id", "reveal-elem").addClass("reveal");
@@ -224,6 +236,7 @@ $("#searchButton").on("click", function (event) {
     revealElem.foundation('close');
   })
   revealElem.append(closeBtn);
+  // bring revealElem into being (?)
   var revealObj = new Foundation.Reveal(revealElem, {});
 ​
   var heroNames = ["bob", "steve", "alan"];
