@@ -45,7 +45,7 @@ var displayCharArr = [
       cardSectionElement.append(imageElement);
       //Real Name Description
       var realname = hero.biography.fullName;
-      var realnameP = $("<p>").text("Real Name:" + realname);
+      var realnameP = $("<p>").text("Real Name: " + realname);
       cardSectionElement.append(realnameP);
   
       zoomElement.append(cardSectionElement);
