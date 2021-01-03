@@ -73,6 +73,7 @@ p {
 #modalHeroImage {
     max-width: 300px;
     float: left;
+    margin: 9px;
 }
 
 .modalPics {

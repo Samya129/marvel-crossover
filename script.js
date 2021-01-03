@@ -16,6 +16,12 @@ var displayCharArr = [
   "Nebula",
 ];
 
+var testModalImages = [
+  "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FuRXmA10PYM0%2Fmaxresdefault.jpg&f=1&nofb=1",
+  "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FFW3UFJ34vtU%2Fmaxresdefault.jpg&f=1&nofb=1",
+  "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn3-www.dogtime.com%2Fassets%2Fuploads%2F2015%2F11%2Fearl-grumpy-dog-puppy.jpg&f=1&nofb=1"
+]
+
 // Foundation reveal - with Jquery
 
 //add attributes and elements
@@ -96,10 +102,12 @@ function clickCardInfo(heroName) {
   heroNameSpan.text(heroName);
   // changed from "#doodle" to revealElem to grab to modal object
   var heroInfo = revealElem;
-  var modalPic = $("<img>").attr(
-    "src",
-    "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1"
-  );
+  var modalPic = $("<img>")
+  // .attr(
+  //   "src",
+  //   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1"
+  // )
+  .attr("id", "modalHeroImage");
   heroInfo.append(modalPic);
   var marvelQueryURL =
     "https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=99+&name=" +
@@ -194,8 +202,9 @@ function clickCardInfo(heroName) {
     // var bioPic = $("<img>").attr(src=character.images.md);
     // //bioPic.attr("id"="bioPic");
     // heroInfo.prepend(bioPic);
+    modalPic.attr("src", character.images.md);
 
-    $("#heroPic").attr("src", character.images.md);
+    //$("#heroPic").attr("src", character.images.md);
     console.log("end second api call");
     revealElem.foundation("open");
     //$("#characterName").text(character.name);
