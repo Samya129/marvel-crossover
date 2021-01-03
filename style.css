@@ -66,6 +66,10 @@ p {
 
 /* modal stuff  */
 
+.modalContainer {
+    background-color: black;
+}
+
 #modalHeroImage {
     max-width: 300px;
     float: left;
@@ -74,4 +78,8 @@ p {
 .modalPics {
     max-width: 200px;
     display: inline;
+}
+
+.modalP{
+    color: red;
 }
