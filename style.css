@@ -48,9 +48,14 @@ li:hover {
 #searchButton .searchBar a .is-dropdown-submenu-parent .menu {
   height: 39px;
 }
-#searchButton:hover {
-  background-color: #f0131e;
+#searchButton{
+  background-color: black;;
 }
+
+.fa-bolt{
+    color: yellow;
+}
+
 h4 {
   font-family: "Bangers", cursive;
   color: yellow;
