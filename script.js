@@ -16,41 +16,41 @@ var displayCharArr = [
   "Nebula",
 ];
 
-// var avengersMoviesArr = [
-//   "Captain America: The First Avenger",
-//   "Captain Marvel",
-//   "Iron Man",
-//   "Iron Man 2",
-//   "The Incredible Hulk",
-//   "Thor",
-//   "The Avengers",
-//   "Iron Man 3",
-//   "Thor: The Dark World",
-//   "Captain America: The Winter Soldier",
-//   "Guardians of the Galaxy",
-//   "Guardians of the Galaxy Vol 2",
-//   "Avengers: Age of Ultron",
-//   "Ant-Man",
-//   "Captain America: Civil War",
-//   "Doctor Strange",
-//   "Black Panther",
-//   "Spider-Man: Homecoming",
-//   "Thor: Ragnarok",
-//   "Ant-Man and the Wasp",
-//   "Avengers: Infinity War",
-//   "Avengers: Endgame",
-//   "Spider-Man: Far From Home",
-// ];
+var avengersMoviesArr = [
+  "Captain America: The First Avenger",
+  "Captain Marvel",
+  "Iron Man",
+  "Iron Man 2",
+  "The Incredible Hulk",
+  "Thor",
+  "The Avengers",
+  "Iron Man 3",
+  "Thor: The Dark World",
+  "Captain America: The Winter Soldier",
+  "Guardians of the Galaxy",
+  "Guardians of the Galaxy Vol 2",
+  "Avengers: Age of Ultron",
+  "Ant-Man",
+  "Captain America: Civil War",
+  "Doctor Strange",
+  "Black Panther",
+  "Spider-Man: Homecoming",
+  "Thor: Ragnarok",
+  "Ant-Man and the Wasp",
+  "Avengers: Infinity War",
+  "Avengers: Endgame",
+  "Spider-Man: Far From Home",
+];
 
-// var moviesMenu = $(".movie-options");
+var moviesMenu = $(".movie-options");
 
-// for(var i= 0; i <avengersMoviesArr.length; i++){
-//   var newMenuButton = $("<button>");      
-//   newMenuButton.text(avengersMoviesArr[i])
-//   var li = $("<li>")
-//   li.append(newMenuButton)
-//       moviesMenu.append(li);
-// }
+for(var i= 0; i <avengersMoviesArr.length; i++){
+  var newMenuButton = $("<button>");      
+  newMenuButton.text(avengersMoviesArr[i])
+  var li = $("<li>")
+  li.append(newMenuButton)
+      moviesMenu.append(li);
+}
 
 var testModalImages = [
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FuRXmA10PYM0%2Fmaxresdefault.jpg&f=1&nofb=1",
