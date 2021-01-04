@@ -11,8 +11,8 @@
 .nav-container{
     display: flex;
     flex-direction: row;
-    border-top: solid white;
-    border-bottom: solid white;
+    /* border-top: solid black;
+    border-bottom: solid black; */
 }
 
 .nav-right{
