@@ -7,6 +7,25 @@
 #headerImage{
     margin-top: -25px;
 }
+
+.nav-container{
+    display: flex;
+    flex-direction: row;
+    border-top: solid white;
+    border-bottom: solid white;
+}
+
+.nav-right{
+    display: flex;
+    justify-content: flex-end;
+    width: 77%;
+    background-color: black;
+}
+
+.nav-left{
+    width: 23%;
+}
+
 .menu {
   background-color: black;
 }
