@@ -3,13 +3,17 @@
   font-family: "Bangers", cursive;
   color: white;
 }
+
+#headerImage{
+    margin-top: -25px;
+}
 .menu {
   background-color: black;
 }
 .card-section,
 li,
 p {
-  background-color: #000000;
+  background-color: black;
 }
 form {
   width: 340px;
