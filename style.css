@@ -1,107 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-*  {
-    font-family: 'Bangers', cursive;
-    color: white;
- }
-
- .headerImage{
-     margin-top: -25px;
- }
-
- .nav-container{
-    display: flex;
-    flex-direction: row;
-    border-top: solid white;
-    border-bottom: solid white;
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+* {
+  font-family: "Bangers", cursive;
+  color: white;
 }
-
-.nav-right{
-    display: flex;
-    justify-content: flex-end;
-    width: 77%;
-    background-color: black;
-}
-
-.nav-left{
-    width: 23%;
-}
-
-body{
-    background-color: rgb(80, 77, 77);
-}
- 
 .menu {
+  background-color: black;
+}
+.card-section,
+li,
+p {
+  background-color: black;
+}
+form {
+  width: 340px;
+  height: 39px;
+}
+a {
+  color: white;
+}
+a:hover,
+li:hover {
+  background-color: #f0131e;
+}
+#searchButton .searchBar a .is-dropdown-submenu-parent .menu {
+  height: 39px;
+}
+#searchButton:hover {
+  background-color: #f0131e;
+}
+h4 {
+  font-family: "Bangers", cursive;
+  color: yellow;
+  text-align: center;
+}
+.grid-x.grid-margin-x.small-up-2.medium-up-3 {
+  padding-top: 15px;
+  background-color: black;
+  border: 30px solid white;
+}
+p {
+  color: yellow;
+}
+.zoom:hover {
+  transform: scale(1.2);
+}
+.card-section:hover {
+  background: #f0131e;
+  /* This section is the hover for the cards already displayed */
+}
+.card {
+  background: black;
+}
+.card:hover {
+  background: #f0131e;
+}
+
+#doodle {
+  color: red;
+}
+
+#doodle,
+p {
+  color: white;
+}
+
+/* modal stuff  */
+
+.modalContainer {
     background-color: black;
 }
 
-form {
-    width: 340px;
-    height: 39px;
+#modalHeroImage {
+    max-width: 300px;
+    float: left;
+    margin: 9px;
 }
 
-a{
-    color:yellow;
-    background-color:  rgb(103, 52, 170) !important;
+.modalPics {
+    max-width: 200px;
+    display: inline;
 }
 
-a:hover, li:hover {
-    background-color: #f0131e;
-}
-
-.input-group-field{
-    color: #008000;
-}
-
-#searchButton .searchBar a .is-dropdown-submenu-parent .menu{
-    height: 39px;
-}
-
-#searchButton{
-    background-color: rgb(103, 52, 170) !important;
-}
-
-.fa-bolt{
-    color: yellow;
-}
-
-h4 {
-    font-family: 'Bangers', cursive;
-    color: yellow;
-    text-align: center;
-    }
-
-.grid-x.grid-margin-x.small-up-2.medium-up-3{
-padding-top: 12px;
-background-color: rgb(103, 52, 170);
-border: 30px solid black;
-}
-
-.scrollable{
-    height: 600px;
-    overflow-y: auto;
-}
-
-.padding{
-    padding: 1.5rem;
-}
-
-p {
-color:yellow;
-}
-
-.zoom:hover{
-    transform: scale(1.1); 
-}
-
-.card-section:hover {
-    background: #f0131e;
-    /* This section is the hover for the cards already displayed */
-}
-
-.card {
-    background: black;
-}
-
-.card:hover{
-    background: #f0131e;
+.modalP{
+    color: red;
 }
