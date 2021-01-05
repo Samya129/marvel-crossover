@@ -19,7 +19,7 @@ var displayCharArr = [
 //add attributes and elements
 for (i = 0; i < displayCharArr.length; i++) {
   var superheroQueryURL =
-    "https://superhero-search.p.rapidapi.com/?hero=" + displayCharArr[i];
+  "https://superhero-search.p.rapidapi.com/?hero=" + displayCharArr[i];
   $.ajax({
     url: superheroQueryURL,
     method: "GET",
@@ -39,29 +39,29 @@ for (i = 0; i < displayCharArr.length; i++) {
     var heroName = hero.name;
     var heroNameElement = $("<h4>").text(heroName);
     cardSectionElement.append(heroNameElement);
-    // Card Image --> give image a data-attribute of heroName[i] to call upon later when img clicked
-    var imageElement = $("<img>");
-    imageElement.attr({
-      src: hero.images.md,
-      "data-heroName": displayCharArr[i],
-    });
-    imageElement.addClass("heroPicClass");
-    imageElement.attr("id", "HeroPic");
-    cardSectionElement.append(imageElement);
-    // Real Name Description
-    var realname = hero.biography.fullName;
-    var realnameP = $("<p>").text("Real Name: " + realname);
-    cardSectionElement.append(realnameP);
-    zoomElement.append(cardSectionElement);
-    cellElement.append(zoomElement);
-    $("#cardAttach").append(cellElement);
-    // cellElement.on('click', clickCardInfo(heroName));
-    cellElement.on("click", function () {
-      clickCardInfo(heroName);
-      // $("#cardAttach").hide();
-      $("#doodle").show();
-    });
-  });
+// Card Image --> give image a data-attribute of heroName[i] to call upon later when img clicked
+var imageElement = $("<img>");
+imageElement.attr({
+  src: hero.images.md,
+  "data-heroName": displayCharArr[i],
+});
+imageElement.addClass("heroPicClass");
+imageElement.attr("id", "HeroPic");
+cardSectionElement.append(imageElement);
+// Real Name Description
+var realname = hero.biography.fullName;
+var realnameP = $("<p>").text("Real Name: " + realname);
+cardSectionElement.append(realnameP);
+zoomElement.append(cardSectionElement);
+cellElement.append(zoomElement);
+$("#cardAttach").append(cellElement);
+// cellElement.on('click', clickCardInfo(heroName));
+cellElement.on("click", function () {
+  clickCardInfo(heroName);
+  // $("#cardAttach").hide();
+  $("#doodle").show();
+});
+});
 }
 // need to make changes here so that information goes into the Reveal
 // CLICK CARD FUNCTION
@@ -215,7 +215,6 @@ $("#searchButton").on("click", function (event) {
   //$("#cardAttach").hide();
   $("#doodle").show();
 });
-
 // Create modal element
 $(".heroPicClass").click(function (e) {
   e.preventDefault();
