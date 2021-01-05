@@ -132,7 +132,8 @@ function clickCardInfo(heroName) {
       "x-rapidapi-key": "54c80468acmsh43ee2bf41fce3bcp10eeadjsnb0994b7b57f7",
       "x-rapidapi-host": "superhero-search.p.rapidapi.com",
     },
-  }).then(function (response) {var character = JSON.parse(response);
+  }).then(function (response) {
+    var character = JSON.parse(response);
     // characater name
     var name = character.name;
     var nameP = $("<p>").text("Name: " + name);
