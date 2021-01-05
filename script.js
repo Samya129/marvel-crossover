@@ -19,8 +19,8 @@ var displayCharArr = [
 var testModalImages = [
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FuRXmA10PYM0%2Fmaxresdefault.jpg&f=1&nofb=1",
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FFW3UFJ34vtU%2Fmaxresdefault.jpg&f=1&nofb=1",
-  "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn3-www.dogtime.com%2Fassets%2Fuploads%2F2015%2F11%2Fearl-grumpy-dog-puppy.jpg&f=1&nofb=1"
-]
+  "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn3-www.dogtime.com%2Fassets%2Fuploads%2F2015%2F11%2Fearl-grumpy-dog-puppy.jpg&f=1&nofb=1",
+];
 
 // Foundation reveal - with Jquery
 
@@ -66,6 +66,7 @@ for (i = 0; i < displayCharArr.length; i++) {
     // cellElement.on('click', clickCardInfo(heroName));
     cellElement.on("click", function () {
       clickCardInfo(heroName);
+      renderImages(heroName)
       // $("#cardAttach").hide();
       $("#doodle").show();
     });
@@ -103,11 +104,11 @@ function clickCardInfo(heroName) {
   // changed from "#doodle" to revealElem to grab to modal object
   var heroInfo = revealElem;
   var modalPic = $("<img>")
-  // .attr(
-  //   "src",
-  //   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1"
-  // )
-  .attr("id", "modalHeroImage");
+    // .attr(
+    //   "src",
+    //   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1"
+    // )
+    .attr("id", "modalHeroImage");
   heroInfo.append(modalPic);
   var marvelQueryURL =
     "https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=99+&name=" +
@@ -248,245 +249,223 @@ $("#searchButton").on("click", function (event) {
   //start preparing for Marvel API KEY
   var heroName = $("#searchBarField").val().trim();
   clickCardInfo(heroName);
+  renderImages(heroName)
   //$("#cardAttach").hide();
   $("#doodle").show();
 });
 // queryURLsuperhero = "https://superheroapi.com/api/access-token";
 
 // // modal stuff
+  //      Create modal element
+  // show modal on image press    // change hero-image class, data-heroName
+  $(".heroPicClass").click(function (e) {
+    e.preventDefault();
+    var heroName = $(this).attr("data-heroName");
+    heroNameSpan.text("Our superasdfa sd:" + heroName);
+    revealElem.foundation("open");
+  });
+  function history(){
+    var lastHeroSearched =localStorage.getItem("heroName")
+    if (lastHeroSearched !== null){
+    $("#searchBarField").val(lastHeroSearched);
+    }}
+  history();
 
-//      Create modal element
-
-// show modal on image press    // change hero-image class, data-heroName
-$(".heroPicClass").click(function (e) {
-  e.preventDefault();
-  var heroName = $(this).attr("data-heroName");
-  heroNameSpan.text("Our superasdfa sd:" + heroName);
-  revealElem.foundation("open");
-
-  //images from "herosWithMovies" needs to be displayed for the selected character
-});
-
-// // Create something to trigger reveal
-// for (var i = 0; i < heroNames.length; i++) {
-//   var heroImage = $("<img>").attr({
-//     src: "planet.jpg",
-//     "data-heroName": heroNames[i]
-//   });
-//   heroImage.addClass("hero-image");
-//   $("#hero-cards").append(heroImage);
-// }
 
 var herosWithMovies = [
   {
-    name:'Iron Man', 
-    image: ['Images\mcu-ironman-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg', 'Images\mcu-marvel avengers.jpg','Images\mcu-ironman3-poster.jpg','Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-spderman-homecoming-poster.jpg','Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
-  },
-  
-  {
-    name: 'Captain America', 
-    imgage: ['Images\mcu-captain-america-poster.jpg','Images\mcu-marvel avengers-poster.jpg','Images\mcu-captain-america-winter-solider-poster.jpg','Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-spderman-homecoming-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-captian-marvel-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
-  },
-  
-  {
-    name: 'Black Panther', 
-    image:  ['Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-black-panther-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
-  },
-  
-  {
-    name: 'Thor', 
-    image: ['Images\mcu-thor-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg', 'Images\mcu-thor-dark-world-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-doctor-strange-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
-  },
-  
-  {
-    name: 'Hulk', 
-    image:  ['Images\mcu-hulk-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg',  'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
-  },
-  
-  {
-    name: 'Doctor Strange', 
-    image:  ['Images\mcu-doctor-strange-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
-  },
-  
-  {
-    name: 'Spider-man', 
-    image:  ['Images\mcu-ironman2-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg','Images\mcu-spderman-homecoming-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg','Images\mcu-spderman-far-from-home-poster.jpg']
-  },
-  
-  {
-    name: 'Falcon', 
-    image:  ['Images\mcu-captain-america-winter-solider-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-antman1-poster.jpg','Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
-  },
-  
-  {
-    name: 'Scarlet Witch', 
-    image:  ['Images\mcu-captain-america-winter-solider-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
-  },
-  
-  {
-    name: 'Ant-Man', 
-    image:  ['Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-antman-&-wasp-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
-  },
-  
-  {
-    name: 'Hawkeye', 
-    image:  ['Images\mcu-marvel avengers.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+    name: "Iron Man",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-ironman-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-ironman2-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-ironman3-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-avengers-age-of-ultron-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-captain-america-civil-war-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-spderman-homecoming-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
   },
 
   {
-    name: 'Star-Lord', 
-    image:  ['Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+    name: "Captain America",
+    imgage: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-captain-america-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-captain-america-civil-war-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-avengers-age-of-ultron-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-captain-america-civil-war-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-spderman-homecoming-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "Imagesmcu-captian-marvel-poster.jpg",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
   },
-  
+
   {
-    name: 'Gamora', 
-    image:  ['Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+    name: "Black Panther",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-captain-america-civil-war-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-black-panther-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
   },
-  
+
   {
-    name: 'Groot', 
-    image:  ['Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+    name: "Thor",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-thor-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-thor-dark-world-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-avengers-age-of-ultron-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-doctor-strange-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-thor-ragnarok-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
   },
-  
+
   {
-    name: 'Nebula', 
-    image:  ['Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg']
+    name: "Hulk",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-hulk-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-avengers-age-of-ultron-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-thor-ragnarok-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
+  },
+
+  {
+    name: "Doctor Strange",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-doctor-strange-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-thor-ragnarok-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
+  },
+
+  {
+    name: "Spider-man",
+    image: [
+      "Imagesmcu-ironman2-poster.jpg",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-captain-america-civil-war-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-spderman-homecoming-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-spderman-far-from-home-poster.jpg?raw=true",
+    ],
+  },
+
+  {
+    name: "Falcon",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-captain-america-civil-war-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-avengers-age-of-ultron-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-antman1-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-captain-america-civil-war-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
+  },
+
+  {
+    name: "Scarlet Witch",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-captain-america-civil-war-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-avengers-age-of-ultron-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-captain-america-civil-war-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
+  },
+
+  {
+    name: "Ant-Man",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-antman1-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-captain-america-civil-war-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-antman-&-wasp-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
+  },
+
+  {
+    name: "Hawkeye",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-avengers-age-of-ultron-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-antman1-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-captain-america-civil-war-poster.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
+  },
+
+  {
+    name: "Star-Lord",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-guardians-of%20the%20galaxy1-poster.jpg",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-guardians-of%20the%20galaxy2-poster.jpg",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
+  },
+
+  {
+    name: "Gamora",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-guardians-of%20the%20galaxy1-poster.jpg",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-guardians-of%20the%20galaxy2-poster.jpg",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
+  },
+
+  {
+    name: "Groot",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-guardians-of%20the%20galaxy1-poster.jpg",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-guardians-of%20the%20galaxy2-poster.jpg",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
+  },
+
+  {
+    name: "Nebula",
+    image: [
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-guardians-of%20the%20galaxy1-poster.jpg",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-guardians-of%20the%20galaxy2-poster.jpg",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-infinity-war.jpg?raw=true",
+      "https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/mcu-marvel%20avengers-endgame.jpg?raw=true",
+    ],
   },
 ];
 console.log(herosWithMovies);
 
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[0]=='Iron Man') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-ironman-poster.jpg','Images\mcu-marvel avengers-poster.jpg','Images\mcu-marvel avengers.jpg','Images\mcu-ironman3-poster.jpg','Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-spderman-homecoming-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg' ; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
+// show modal on image press    // change hero-image class, data-heroName
+function renderImages(heroName){
+  // var heroName = $(this).attr("data-heroName");
+  // heroNameSpan.text("Our superasdfa sd:" + heroName);
+  // revealElem.foundation("open");
+  console.log("The hero name chosen is", heroName)
+  //images from "herosWithMovies" needs to be displayed for the selected character
 
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[1]=='Captain America') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-captain-america-poster.jpg','Images\mcu-marvel avengers-poster.jpg','Images\mcu-captain-america-winter-solider-poster.jpg','Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-spderman-homecoming-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-captian-marvel-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg' ; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[2]=='Black Panther') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-black-panther-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg' ; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[3]=='Thor') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-thor-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg', 'Images\mcu-thor-dark-world-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-doctor-strange-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg' ; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[4]=='Hulk') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-hulk-poster.jpg', 'Images\mcu-marvel avengers-poster.jpg',  'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg' ; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[5]=='Doctor Strange') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-doctor-strange-poster.jpg', 'Images\mcu-thor-ragnarok-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg' ; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[6]=='Spider-man') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-ironman2-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg',
-// 'Images\mcu-spderman-homecoming-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg','Images\mcu-spderman-far-from-home-poster.jpg' ; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[7]=='Falcon') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-captain-america-winter-solider-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[8]=='Scarlet Witch') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-captain-america-winter-solider-poster.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[9]=='Ant-Man') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-antman-&-wasp-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[10]=='Hawkeye') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-marvel avengers.jpg', 'Images\mcu-avengers-age-of-ultron-poster.jpg', 'Images\mcu-antman1-poster.jpg', 'Images\mcu-captain-america-civil-war-poster.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[11]=='Star-Lord') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[12]=='Gamora') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[13]=='Groot') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
-
-// for(var i=0;i<heroNames.length;i++){
-//   if(heroNames[14]=='Nebula') 
-//   var movieImg = document.createElement('img'); 
-//   img.src =  
-// 'Images\mcu-guardians-of the galaxy1-poster.jpg', 'Images\mcu-guardians-of the galaxy2-poster.jpg', 'Images\mcu-marvel avengers-infinity-war.jpg', 'Images\mcu-marvel avengers-endgame.jpg'; 
-//   document.getElementById('body').appendChild(movieImg); 
-//   down.innerHTML = 'Image Element Added.';  
-// }
+  // // Create something to trigger reveal
+  for (var i = 0; i < herosWithMovies.length; i++) {
+    if (herosWithMovies[i].name === heroName) {
+      herosWithMovies[i].image.map((image) => {
+      var heroImage = $("<img>").attr({
+        src: image,
+        "data-heroName": herosWithMovies[i].name,
+      });
+      heroImage.addClass("hero-image");
+      $("#hero-card").append(heroImage);
+    });
+    }
+  } 
+}
