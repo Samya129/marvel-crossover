@@ -15,15 +15,7 @@ var displayCharArr = [
   "Groot",
   "Nebula",
 ];
-
-var testModalImages = [
-  "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FuRXmA10PYM0%2Fmaxresdefault.jpg&f=1&nofb=1",
-  "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FFW3UFJ34vtU%2Fmaxresdefault.jpg&f=1&nofb=1",
-  "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn3-www.dogtime.com%2Fassets%2Fuploads%2F2015%2F11%2Fearl-grumpy-dog-puppy.jpg&f=1&nofb=1"
-]
-
 // Foundation reveal - with Jquery
-
 //add attributes and elements
 for (i = 0; i < displayCharArr.length; i++) {
   var superheroQueryURL =
@@ -69,16 +61,9 @@ for (i = 0; i < displayCharArr.length; i++) {
       // $("#cardAttach").hide();
       $("#doodle").show();
     });
-
-    // var firstName = hero.name;
-    // console.log(firstName);
-    // var firstCardName = $("#cardName1");
-    // var firstName1 = $("<h4>").text(firstName);
-    // firstCardName.append(firstName1);
   });
 }
 // need to make changes here so that information goes into the Reveal
-
 // CLICK CARD FUNCTION
 function clickCardInfo(heroName) {
   // Create reveal modal element
@@ -103,10 +88,6 @@ function clickCardInfo(heroName) {
   // changed from "#doodle" to revealElem to grab to modal object
   var heroInfo = revealElem;
   var modalPic = $("<img>")
-  // .attr(
-  //   "src",
-  //   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1"
-  // )
   .attr("id", "modalHeroImage");
   heroInfo.append(modalPic);
   var marvelQueryURL =
@@ -120,7 +101,6 @@ function clickCardInfo(heroName) {
   }).then(function (response) {
     // Create Variables from Marvel Key
     // where the info from the 3 apis will be displayed,
-
     // get marvel superhero object
     var charObj = response.data.results[0];
     // number of comic appearances
@@ -139,12 +119,7 @@ function clickCardInfo(heroName) {
     var charDescrip = charObj.description;
     var heroDescription = $("<p>").text("Description: " + charDescrip);
     heroInfo.append(heroDescription);
-    // URLs
-    // var charURLS = charObj.urls;
-    // add header info to card
-    // var cardHeader = $("<h4>").text(heroName);
-    // heroInfo.append(cardHeader);
-    console.log("end first api response");
+    // console.log("end first api response");
   });
   // search Superhero API for other information
   //var charSearch = $("#searchBarField").val().trim();
@@ -154,7 +129,7 @@ function clickCardInfo(heroName) {
     url: superheroQueryURL,
     method: "GET",
     headers: {
-      "x-rapidapi-key": "5bcd41d15fmsh9d923c28d37999ep19e91fjsne99fb8220de",
+      "x-rapidapi-key": "54c80468acmsh43ee2bf41fce3bcp10eeadjsnb0994b7b57f7",
       "x-rapidapi-host": "superhero-search.p.rapidapi.com",
     },
   }).then(function (response) {
@@ -197,21 +172,11 @@ function clickCardInfo(heroName) {
       "First Appearance: " + firstAppearance
     );
     heroInfo.append(firstAppearanceP);
-    // image to the left of the description
-    // console.log(character.images.md);
-    // var bioPic = $("<img>").attr(src=character.images.md);
-    // //bioPic.attr("id"="bioPic");
-    // heroInfo.prepend(bioPic);
     modalPic.attr("src", character.images.md);
-
-    //$("#heroPic").attr("src", character.images.md);
-    console.log("end second api call");
+    // console.log("end second api call");
     revealElem.foundation("open");
-    //$("#characterName").text(character.name);
-    //$("#characterInfo").text(character.biography.fullName);
   });
   // search movie API for movie information
-  //var movie = $("#searchBarField").val().trim();
   var queryURL =
     "https://movie-database-imdb-alternative.p.rapidapi.com/?s=" +
     heroName +
@@ -226,8 +191,6 @@ function clickCardInfo(heroName) {
   }).then(function (response) {
     var movieMarvel = response;
     //get section to put movie information
-    //include movie poster image
-    //$("#heroPic").attr("src", movieMarvel.Search[0].Poster);
     //movie title
     var movTitle = movieMarvel.Search[0].Title;
     //create an element
@@ -241,46 +204,28 @@ function clickCardInfo(heroName) {
     console.log(movieMarvel);
   });
 }
-// stick one API call inside the other --> nest
-// call the card in the search button function but as large as it can get
+
+// Search Button Function
 $("#searchButton").on("click", function (event) {
   event.preventDefault();
   //start preparing for Marvel API KEY
   var heroName = $("#searchBarField").val().trim();
-  
+  localStorage.setItem("heroName", heroName);
   clickCardInfo(heroName);
   //$("#cardAttach").hide();
   $("#doodle").show();
 });
 
-// queryURLsuperhero = "https://superheroapi.com/api/access-token";
-
-// // modal stuff
-
-//      Create modal element
-
-// show modal on image press    // change hero-image class, data-heroName
+// Create modal element
 $(".heroPicClass").click(function (e) {
   e.preventDefault();
   var heroName = $(this).attr("data-heroName");
-  heroNameSpan.text("Our superasdfa sd:" + heroName);
+  heroNameSpan.text(heroName);
   revealElem.foundation("open");
 });
-
-// get hero name and set it as header
-// cell
-// get hero image and float it left + display/wrap hero info text
-// cell
-// display movies hero has been in
-// cell
-
-// var heroNames = ["bob", "steve", "alan"];
-// // Create something to trigger reveal
-// for (var i = 0; i < heroNames.length; i++) {
-//   var heroImage = $("<img>").attr({
-//     src: "planet.jpg",
-//     "data-heroName": heroNames[i]
-//   });
-//   heroImage.addClass("hero-image");
-//   $("#hero-cards").append(heroImage);
-// }
+function history(){
+  var lastHeroSearched =localStorage.getItem("heroName")
+  if (lastHeroSearched !== null){
+  $("#searchBarField").val(lastHeroSearched);
+  }}
+history();
