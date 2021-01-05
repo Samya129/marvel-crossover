@@ -22,15 +22,13 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
     crossorigin="anonymous" />
   </head>
-
   <body>
     <p><button class="button" data-open="exampleModal1">Click me for a modal</button></p>
-
     <!-- below is a "model modal" that i used as an example to build the dynamic ones in the js -jack -->
     <div class="reveal" id="exampleModal1" data-reveal>
       <div class="grid-container">
         <h1>Hero Name</h1>
-        <img id="modalHeroImage" src=Images\header.png alt="hero image">
+        <img id="modalHeroImage" src=Assets/header.png alt="hero image">
         <p>Textarinoooooooooooooooooooo</p>
         <p>Hero information</p>
         <p>More hero information</p>
@@ -38,63 +36,28 @@
       <div class="lineBreak">
         <br><br><br><br><br><br><br><br>
       </div>
-      <div class="grid-x grid-margin-x small-up-2 medium-up-3"></div>          
-          <img class="modalPics" src=Images\header.png alt="hero image">
-          <img class="modalPics" src=Images\header.png alt="hero image">
-          <img class="modalPics" src=Images\header.png alt="hero image">
+      <div class="grid-x grid-margin-x small-up-2 medium-up-3"></div>
+          <img class="modalPics" src=Assets/header.png alt="hero image">
+          <img class="modalPics" src=Assets/header.png alt="hero image">
+          <img class="modalPics" src=Assets/header.png alt="hero image">
     </div>
     </div>
-      
       <!-- <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
       <button class="close-button" data-close aria-label="Close modal" type="button">
         <span aria-hidden="true">&times;</span>
       </button>
     </div> -->
-    
-    <img src="Images\header.png" alt="Header image titled: Marvel Overlaps" />
-    <!-- <img src="Images/Universe.png" alt="Marvel Universe Image"> -->
     <div class="nav-container">
-      <div class="nav-left">
-        <!-- Dropdown Menu -->
-        <ul class="dropdown menu" data-dropdown-menu id="movieDropDown">
-          <li>
-            <a href="#">Movies</a>
-            <ul class="menu">
-              <li><select id= "selectMovieID"></select></li>
-              <!-- Extra Movies -->
-            </ul>
-          </li>
-          <li>
-            <a href="#">Comics</a>
-            <ul class="menu" style="text-align: center">
-              <li>
-                <button href="#">Captain-America: The First Avenger</button>
-              </li>
-              <li><button href="#">Captain Marvel</button></li>
-              <li><button href="#">Iron Man</button></li>
-              <li><button href="#">Iron Man 2</button></li>
-              <!--Add extra comics below -->
-            </ul>
-          </li>
-          <li>
-            <a href="#">Characters</a>
-            <ul class="menu">
-              <li><button href="#">Deadpool</button></li>
-              <li><button href="#">Wolverine</button></li>
-              <li><button href="#">Loki</button></li>
-              <li><button href="#">Black Panther</button></li>
-              <!--Add extra characters  -->
-            </ul>
-          </li>
-        </ul>
-      </div>
+    <img id= "headerImage" src="https://github.com/Samya129/marvel-crossover/blob/content-slider.js/Images/header.png?raw=true" alt="Header image titled: Marvel Overlaps" />
       <div class="nav-right">
         <!--Search Bar-->
         <form class="searchBar" autocomplete="on">
           <div class="input-group">
             <input
+              placeholder="Search your favorite Marvel Character here"
               class="input-group-field"
               type="text"
+              type="reset"
               autocomplete="off"
               id="searchBarField"
             />
@@ -105,7 +68,7 @@
                 id="searchButton"
                 value="Search"
               >
-                <i class="fas fa-save float-right"></i>
+                <i class="fa fa-bolt float-right"></i>
               </button>
             </div>
           </div>
@@ -115,61 +78,6 @@
     <!--Cards Section-->
     <div class="grid-container">
       <div id="cardAttach" class="grid-x grid-margin-x small-up-2 medium-up-3">
-        <!-- <div class="cell">
-          <div class="card zoom">
-            <div class="card-section">
-            <h4 id= "heroName" style="font-family: 'Bangers', cursive;"> </h4>
-            <img class="imageElement" src="https://via.placeholder.com/550x550">
-              <p class="descriptionElement">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            </div>
-          </div>
-          <div class="cell">
-            <div class="card zoom">
-              <div class="card-section">
-                <h4 style="font-family: 'Bangers', cursive;">Main Character 2</h4>
-              <img class="cardImage" src="https://via.placeholder.com/550x550">
-                <p class="pCards">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-              </div>
-            </div>
-            <div class="cell">
-              <div class="card zoom">
-                <div class="card-section">
-                  <h4 style="font-family: 'Bangers', cursive;"> Main Character 3</h4>
-                <img class="cardImage3" src="https://via.placeholder.com/550x550">
-                  <p class="pCards3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                </div>
-              </div>
-              <div class="cell">
-                <div class="card zoom">
-                  <div class="card-section">
-                    <h4 style="font-family: 'Bangers', cursive;"></h4>
-                  <img class="cardImage4" src="https://via.placeholder.com/550x550">
-                    <p class="pCards4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  </div>
-                  </div>
-                </div>
-                <div class="cell">
-                  <div class="card zoom">
-                    <div class="card-section">
-                      <h4 style="font-family: 'Bangers', cursive;">Main Character 5</h4>
-                    <img class="cardImage5" src="https://via.placeholder.com/550x550">
-                      <p class="pCards5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                    </div>
-                  </div>
-                  <div class="cell">
-                    <div class="card zoom">
-                      <div class="card-section">
-                        <h4 style="font-family: 'Bangers', cursive;">Main Character 6</h4>
-                      <img class="cardImage6" src="https://via.placeholder.com/550x550">
-                        <p class="pCards6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                      </div>
-                      </div>
-                    </div>
-     -->
       </div>
     </div>
     <div class="container">
@@ -192,61 +100,11 @@
             data-margin-top="6"
             data-anchor="example1"
           >
-            <img id="heroPic"
-              class="thumbnail"
-              alt="Placeholder"
-            />
           </div>
         </div>
       </div>
     </div>
   </div>
-<!-- 
-<button id="modal-btn" class="button">Click Here</button>
-
-  <div id="my-modal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span>
-        <h2>Hero Name</h2>
-      </div>
-      <div class="modal-body">
-        <img id="modalImage"
-        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1>
-        <p>This is my modal</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-          repellendus nisi, sunt consectetur ipsa velit repudiandae aperiam modi
-          quisquam nihil nam asperiores doloremque mollitia dolor deleniti
-          quibusdam nemo commodi ab.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-          repellendus nisi, sunt consectetur ipsa velit repudiandae aperiam modi
-          quisquam nihil nam asperiores doloremque mollitia dolor deleniti
-          quibusdam nemo commodi ab.
-        </p>
-      </div>
-      <div id="modalBelow" class="modal-body">
-        <img class="blockImage"
-        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1>
-        <img class="blockImage"
-        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1> 
-        <img class="blockImage"
-        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1> 
-        <img class="blockImage"
-        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1> 
-        <img class="blockImage"
-        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1> 
-        <img class="blockImage"
-        src=https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsecure.i.telegraph.co.uk%2Fmultimedia%2Farchive%2F02790%2Fmonkey_2790171k.jpg&f=1&nofb=1> 
-    </div>
-      <div class="modal-footer">
-        <h3>Modal Footer</h3>
-      </div>
-    </div>
-  </div>
- -->
 
    <!-- 23 Movies Chronological-->
    <section class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
@@ -446,6 +304,6 @@
     <script>
       $(document).foundation();
     </script>
-    <script src="script.js"></script>
+    <script src="C:\Users\Vince\OneDrive\Columbia Bootcamp\GitHub\marvel-crossover\script.js"></script>
   </body>
 </html>
