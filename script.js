@@ -16,42 +16,6 @@ var displayCharArr = [
   "Nebula",
 ];
 
-var avengersMoviesArr = [
-  "Captain America: The First Avenger",
-  "Captain Marvel",
-  "Iron Man",
-  "Iron Man 2",
-  "The Incredible Hulk",
-  "Thor",
-  "The Avengers",
-  "Iron Man 3",
-  "Thor: The Dark World",
-  "Captain America: The Winter Soldier",
-  "Guardians of the Galaxy",
-  "Guardians of the Galaxy Vol 2",
-  "Avengers: Age of Ultron",
-  "Ant-Man",
-  "Captain America: Civil War",
-  "Doctor Strange",
-  "Black Panther",
-  "Spider-Man: Homecoming",
-  "Thor: Ragnarok",
-  "Ant-Man and the Wasp",
-  "Avengers: Infinity War",
-  "Avengers: Endgame",
-  "Spider-Man: Far From Home",
-];
-
-var moviesMenu = $(".movie-options");
-
-for(var i= 0; i <avengersMoviesArr.length; i++){
-  var newMenuButton = $("<button>");      
-  newMenuButton.text(avengersMoviesArr[i])
-  var li = $("<li>")
-  li.append(newMenuButton)
-      moviesMenu.append(li);
-}
-
 var testModalImages = [
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FuRXmA10PYM0%2Fmaxresdefault.jpg&f=1&nofb=1",
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FFW3UFJ34vtU%2Fmaxresdefault.jpg&f=1&nofb=1",
@@ -190,7 +154,7 @@ function clickCardInfo(heroName) {
     url: superheroQueryURL,
     method: "GET",
     headers: {
-      "x-rapidapi-key": "54c80468acmsh43ee2bf41fce3bcp10eeadjsnb0994b7b57f7",
+      "x-rapidapi-key": "5bcd41d15fmsh9d923c28d37999ep19e91fjsne99fb8220de",
       "x-rapidapi-host": "superhero-search.p.rapidapi.com",
     },
   }).then(function (response) {
@@ -283,10 +247,12 @@ $("#searchButton").on("click", function (event) {
   event.preventDefault();
   //start preparing for Marvel API KEY
   var heroName = $("#searchBarField").val().trim();
+  
   clickCardInfo(heroName);
   //$("#cardAttach").hide();
   $("#doodle").show();
 });
+
 // queryURLsuperhero = "https://superheroapi.com/api/access-token";
 
 // // modal stuff

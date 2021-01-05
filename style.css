@@ -17,17 +17,14 @@ body{
     flex-direction: row;
     border-top: solid black;
     border-bottom: solid black;
+    position: relative;
 }
 
 .nav-right{
     display: flex;
     justify-content: flex-end;
-    width: 77%;
+    width: 50%;
     background-color: black;
-}
-
-.nav-left{
-    width: 23%;
 }
 
 .menu {
@@ -39,7 +36,7 @@ p {
   background-color: black;
 }
 form {
-  width: 340px;
+  width: 1070px;
   height: 39px;
 }
 a {
@@ -52,6 +49,13 @@ li:hover {
 #searchButton .searchBar a .is-dropdown-submenu-parent .menu {
   height: 39px;
 }
+.searchBar {
+    z-index: 10;
+    position: absolute;
+    bottom: 430px;
+    left: 504px;
+}
+
 #searchButton{
   background-color: black;;
 }
