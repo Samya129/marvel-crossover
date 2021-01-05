@@ -47,7 +47,12 @@ Developers are often tasked to work amongst other developers to complete an appl
 
 * Foundation CSS-Framework
 
-*  2 API's 
+*  Marvel Comic API
+
+*  Super Hero API
+
+*  Movie Database IMDB Alternative API
+
 
 ## Source Links:
 
@@ -62,7 +67,7 @@ Developers are often tasked to work amongst other developers to complete an appl
 
 * Usage: None
 
-* Contributors: Viviana ,Samya Fiki, Jack Reed, Vincent Hart
+* Contributors: Viviana Arenas,Samya Fiki, Jack Reed, Vincent Hart
 
 * License: None
 
