@@ -247,6 +247,7 @@ $("#searchButton").on("click", function (event) {
   event.preventDefault();
   //start preparing for Marvel API KEY
   var heroName = $("#searchBarField").val().trim();
+  localStorage.setItem("heroName", heroName);
   clickCardInfo(heroName);
   //$("#cardAttach").hide();
   $("#doodle").show();
@@ -264,6 +265,14 @@ $(".heroPicClass").click(function (e) {
   heroNameSpan.text("Our superasdfa sd:" + heroName);
   revealElem.foundation("open");
 });
+
+function history(){
+  var lastHeroSearched =localStorage.getItem("heroName")
+  if (lastHeroSearched !== null){
+  $("#searchBarField").val(lastHeroSearched);
+  }}
+
+history();
 
 // get hero name and set it as header
 // cell
