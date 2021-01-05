@@ -16,7 +16,6 @@ var displayCharArr = [
   "Nebula",
 ];
 
-
 // Foundation reveal - with Jquery
 generateHeroReveal();
 
@@ -286,21 +285,18 @@ $(".heroPicClass")
     e.preventDefault();
     var heroName = $(this)
       .attr("data-heroName");
+      localStorage.setItem("heroName", heroName);
     heroNameSpan.text("Our superasdfa sd:" + heroName);
     $("#reveal-elem")
       .foundation("open");
   });
 
-function history() {
-  var lastHeroSearched = localStorage.getItem("heroName");
-  if (lastHeroSearched !== null) {
-    $("#searchBarField")
-      .val(lastHeroSearched);
-  }
-}
-history();
-
-
+  function history(){
+    var lastHeroSearched =localStorage.getItem("heroName")
+    if (lastHeroSearched !== null){
+    $("#searchBarField").val(lastHeroSearched);
+    }}
+  history();
 
 var herosWithMovies = [{
   name: "Iron Man",
