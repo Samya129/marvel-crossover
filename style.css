@@ -9,6 +9,7 @@ body{
 }
 #headerImage{
     margin-top: -25px;
+    max-width: fit-content;
 }
 .nav-container{
     display: flex;
@@ -33,7 +34,7 @@ body{
     background-color: black;
   }
   form {
-    width: 1070px;
+    width: 1145px;
     height: 39px;
   }
   a {color: white;
@@ -49,7 +50,7 @@ body{
       z-index: 10;
       position: absolute;
       bottom: 430px;
-      left: 504px;
+      left: 542px;
   }
   
   #searchButton{
