@@ -10,6 +10,7 @@ body{
 #headerImage{
     margin-top: -25px;
     max-width: fit-content;
+
 }
 .nav-container{
     display: flex;
