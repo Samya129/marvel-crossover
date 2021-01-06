@@ -1,11 +1,8 @@
-<<<<<<< Updated upstream
+
 # CodeVengers/Project-1
 
 As Marvel fans and novice programmers, we designed an application that allows users to research Marvel Superheroes and find out where these heroes can be seen in action. Our application, titled Marvel Overlaps, merges the worlds of the Marvel Comics and the Marvel Cinematic Universe. Users can search for their favorite heroes and find out their biographical information, number of comic and series appearances, and the Marvel movies they have been featured in.
 
-=======
-As Marvel fans and novice programmers, we designed an application that allows users to research Marvel Superheroes and find out where these heroes can be seen in action. Our application, titled Marvel Overlaps, merges the worlds of the Marvel Comics and the Marvel Cinematic Universe. Users can search for their favorite heroes and find out their biographical information, number of comic and series appearances, and the Marvel movies they have been featured in.
->>>>>>> Stashed changes
 ## Application Criteria:
 * Use a CSS framework other than Bootstrap.
 * Be deployed to GitHub Pages.
