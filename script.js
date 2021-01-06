@@ -272,30 +272,18 @@ $("#searchButton")
     var heroName = $("#searchBarField")
       .val()
       .trim();
+    localStorage.setItem("heroName", heroName);
     clickCardInfo(heroName);
     renderImages(heroName);
 
     $("#doodle").show();
   });
 
-
-// show modal on image press
-$(".heroPicClass")
-  .click(function(e) {
-    e.preventDefault();
-    var heroName = $(this)
-      .attr("data-heroName");
-      localStorage.setItem("heroName", heroName);
-    heroNameSpan.text("Our superasdfa sd:" + heroName);
-    $("#reveal-elem")
-      .foundation("open");
-  });
-
   function history(){
     var lastHeroSearched =localStorage.getItem("heroName")
     if (lastHeroSearched !== null){
     $("#searchBarField").val(lastHeroSearched);
-    }}
+    }};
   history();
 
 var herosWithMovies = [{
