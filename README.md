@@ -1,6 +1,6 @@
 # CodeVengers/Project-1
 
-Developers are often tasked to work amongst other developers to complete an application. As learning coders, our task was to work as a team to create an application of our group's chosen theme and use a framework that we have never used before. As Marvel fans, we wanted to create an application that Marvel fans alike could go to and experience information they may not have known about their favorite Marvel characters as well as Marvel movies. By implementing local storage, we can identify what characters is of popular choice and see where with the information given, what users may want for the future development of this application.
+As Marvel fans and novice programmers, we designed an application that allows users to research Marvel Superheroes and find out where these heroes can be seen in action. Our application, titled Marvel Overlaps, merges the worlds of the Marvel Comics and the Marvel Cinematic Universe. Users can search for their favorite heroes and find out their biographical information, number of comic and series appearances, and the Marvel movies they have been featured in.
 
 ## Application Criteria:
 
