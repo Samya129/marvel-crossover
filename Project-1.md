@@ -1,6 +1,6 @@
 Project Title: CodeVengers
 
-Project Description: 
+Project Description:
 
 We want to create an application for Marvel fans that searches what Marvel characters and their prospective movies are.
 
@@ -9,7 +9,7 @@ AS A marvel fan
 WE WANT TO create a database that finds what movies my favorite superhero is in and information regarding that particular hero.
 SO THAT I can check superhero movie timeline, and crossovers with other heroes.
 
-Wireframe: 
+Wireframe:
 Note: Sketched out
 
 API’s to be used:
@@ -17,9 +17,8 @@ https://developer.marvel.com/
 
 https://www.omdbapi.com/
 
-
 Rough Breakdown of Tasks:
-A check list of Marvel movies  and characters excluding comics for now.
+A check list of Marvel movies and characters excluding comics for now.
 Characters that collaborate in the same movies
 Timeline of what movies and the dates they were made
 Jumbotron of all marvel characters on the top of the page.
